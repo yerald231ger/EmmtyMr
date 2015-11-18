@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="EMMTY_GO_WEB.Services.MonitoringAjax" CodeBehind="MonitoringAjax.svc.cs" %>

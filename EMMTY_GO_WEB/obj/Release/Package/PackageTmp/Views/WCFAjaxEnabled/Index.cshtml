@@ -1,0 +1,28 @@
+﻿
+<script type="text/javascript">
+    function getDispenserWCF() {
+        $.getJSON('http://localhost:1959/Services/DataATM.svc/GetCashLevelsDispensador', { text: $("#textToSend").val() }, function (data) {
+            $("#results").replaceWith("<div id=results>" + data["d"] + "</div>");
+        });
+    }
+
+    function getDispenserWCFA() {
+        alert(2);
+        $.getJSON('http://localhost:1959/Services/MonitoringAjax.svc/DataDispenser', { data: $("#textToSendA").val() }, function (data) {
+            alert(4);
+            $("#results").replaceWith("<div id=results>" + data["d"] + "</div>");
+        });
+    }
+</script>
+    @{
+        ViewBag.Title = "Index";
+    }
+
+<h2>Index of Test WCF Ajax Enabled</h2>
+
+
+<input id="search" type="button" value="Search" onclick="getDispenserWCF()" />
+<input type="text" size=100 id="textToSend" />
+<input id="searchA" type="button" value="SearchA" onclick="getDispenserWCFA()" />
+<input type="text" size=100 id="textToSendA" />
+<div id="results"></div>

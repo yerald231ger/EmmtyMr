@@ -1,0 +1,43 @@
+﻿@model EMMTY_GO_WEB.Models.ReportesCajero
+
+@{
+    ViewBag.Title = "CreateRelationRxC";
+}
+
+<h2>Asignar Reporte a cajero</h2>
+
+@using (Html.BeginForm("Create","ReportesXCajero"))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Numero de Serie: @ViewBag.NSCajero</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.IdReporte, "NS Reporte", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("IdReporte", String.Empty)
+                @Html.ValidationMessageFor(model => model.IdReporte)
+            </div>
+        </div>
+
+        <input type="hidden" id="IdCajero" name="IdCajero" value=@ViewBag.IdCajero />
+        <input type="hidden" id="FromCreateRelationRxC" name="FromCreateRelationRxC" value="true" />
+        
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "IndexRxC", new { id = ViewBag.IdCajero })
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,140 @@
+﻿@section scripts
+{
+    <script type="text/javascript">
+        var Aceptador_Monedas = {
+            IdAceptador_Monedas: 0,
+            ModeloAceptador_Monedas: null,
+            NombreAceptador_Monedas: null,
+            NSAceptador_Monedas: null,
+            StatusAceptador_Monedas: null,
+            ErrorAceptador_Monedas: null,
+            MarcaAceptador_Monedas: null,
+            Cajeros: null
+        };
+        var UpdateCashLevels = setInterval(function() { Refresh() }, 1000);
+
+        var id00 = "error-panel";
+        var id01 = "ErrorAceptador_Monedas";
+        var id02 = "StatusAceptador_Monedas";
+        var alertInfo = "class='alert alert-info'";
+        var alertDanger = "class='alert alert-danger'";
+        var alertSuccess = "class='alert alert-success'";
+
+        var collapsed = false;
+
+        function Refresh() {
+            $.getJSON("@Url.Action("GetInfo")", { idAceptadorMonedas: "@Model.IdAceptador_Monedas" }, function(data) {
+
+                Aceptador_Monedas = $.parseJSON(data);
+                $("#" + id01).replaceWith("<div id=" + id01 + " " + alertInfo + " ><strong>" + Aceptador_Monedas.ErrorAceptador_Monedas + "</strong></div>");
+                $("#" + id02).replaceWith("<div id=" + id02 + " " + (Aceptador_Monedas.StatusAceptador_Monedas ? alertDanger : alertSuccess) + " ><strong>" + (Aceptador_Monedas.StatusAceptador_Monedas ? Aceptador_Monedas.ErrorAceptador_Monedas : "Okey") + "</strong></div>");
+               
+                if (!collapsed && Aceptador_Monedas.StatusAceptador_Monedas) {
+                    $("#" + id00).collapse("toggle");
+                    collapsed = true;
+                }
+
+                if (collapsed && !Aceptador_Monedas.StatusAceptador_Monedas) {
+                    $("#" + id00).collapse("toggle");
+                    collapsed = false;
+                }
+            });
+        }
+
+    </script>
+}
+@model EMMTY_GO_WEB.Models.Aceptador_Monedas
+
+@{
+    ViewBag.Title = "Monitoreo";
+}
+
+<h2>Monitoreo @Html.DisplayFor(model => model.NombreAceptador_Monedas)</h2>
+
+<div><hr />
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-primary">
+
+                <div class="panel-heading">@Html.DisplayNameFor(model => model.NSAceptador_Monedas): @Html.DisplayFor(model => model.NSAceptador_Monedas)</div>
+                <div class="panel-body">
+                    Descripcion del componente
+                </div>
+                <table class="table">
+                    <tr>
+                        <th></th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.NombreAceptador_Monedas)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ModeloAceptador_Monedas)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.MarcaAceptador_Monedas)
+                        </th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            @Html.DisplayFor(model => model.NombreAceptador_Monedas)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.ModeloAceptador_Monedas)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.MarcaAceptador_Monedas)
+                        </td>
+                    </tr>
+                </table>
+                <div class="panel-body">
+                    Estado del Componente
+                </div>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1">
+                        <div class="row">
+                            <div class="col-md-6 col-xs-6">
+                                <h5>
+                                    @Html.DisplayNameFor(model => model.StatusAceptador_Monedas)
+                                </h5>
+                                <div id="StatusAceptador_Monedas" class="@(Model.StatusAceptador_Monedas ? "alert alert-danger" : "alert alert-success")">
+                                    <strong>@(Model.StatusAceptador_Monedas ? "Error" : "Okey")</strong>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xs-6">
+                                <h5>
+                                    @Html.DisplayNameFor(model => model.ErrorAceptador_Monedas)
+                                </h5>
+                                <div id="ErrorAceptador_Monedas" class="alert alert-info">
+                                    <strong>@Html.DisplayFor(model => model.ErrorAceptador_Monedas)</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-info collapse" id="error-panel">
+                <div class="panel-heading">
+                    Descripcion del Error
+                </div>
+                <div class="panel-body" id="error-panel-body">
+                    ...
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<p>
+    @if (User.IsInRole("Admin"))
+    {
+        @Html.ActionLink("Editar", "Edit", new { id = Model.IdAceptador_Monedas })
+        @:|
+        @Html.ActionLink("Regresar a la lista", "Index")
+        @:|
+    }
+    @if (Model.Cajeros.Count > 0)
+    {
+        @Html.ActionLink("Regresar al cajero", "Details", "Cajero", new { id = Model.Cajeros.First().IdCajero }, new { })
+    }
+</p>

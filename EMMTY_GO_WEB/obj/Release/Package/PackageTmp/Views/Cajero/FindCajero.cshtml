@@ -1,0 +1,24 @@
+﻿@using GridMvc.Html
+@using Microsoft.AspNet.Identity
+@model IEnumerable<EMMTY_GO_WEB.Models.Cajero>
+
+    @Html.Grid(Model).Columns(columns =>
+    {
+        columns.Add(c => c.NSCajero).Titled("Numero de Serie").Filterable(true).Sanitized(false)
+            .Encoded(false).RenderValueAs(o => Html.ActionLink(o.NSCajero, "Details", "Cajero", new {Id = o.IdCajero}, null).ToHtmlString());
+        columns.Add().Titled("Online").Css("text-center").RenderValueAs(c => c.Online ? "ONLINE" : "OFFLINE");
+        columns.Add(c => c.UbicacionCajero).Titled("Ubicacion");
+        columns.Add(c => c.ErrorCajero).Titled("Error");
+        columns.Add(c => c.StatusCajero).Titled("Status");
+        columns.Add(c => c.ModeloCajero).Titled("Modelo");
+        columns.Add().Titled("Nivel").Css("text-center").Sanitized(false).Encoded(false).RenderValueAs(o => string.Format("<div class='DivCashFlow' id='{0}'></div>", o.IdCajero));
+        columns.Add().Sanitized(false).Encoded(false).RenderValueAs(
+            o =>
+            {
+                if (!User.IsInRole("Admin"))
+                    return string.Empty;
+
+                var added = Html.ActionLink("Editar", "Edit", new {id = o.IdCajero}).ToHtmlString();
+                return added + (" | " + Html.ActionLink("Eliminar", "Delete", new {id = o.IdCajero}).ToHtmlString());
+            });
+    }).WithPaging(10).Sortable(true)

@@ -1,0 +1,82 @@
+﻿@model EMMTY_GO_WEB.Models.Reporte
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Reporte</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.IdReporte)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FechaReporte, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FechaReporte)
+                @Html.ValidationMessageFor(model => model.FechaReporte)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CorrectivoReporte, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CorrectivoReporte)
+                @Html.ValidationMessageFor(model => model.CorrectivoReporte)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PreventivoReporte, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PreventivoReporte)
+                @Html.ValidationMessageFor(model => model.PreventivoReporte)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TecnicoReporte, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TecnicoReporte)
+                @Html.ValidationMessageFor(model => model.TecnicoReporte)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NombreReporte, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NombreReporte)
+                @Html.ValidationMessageFor(model => model.NombreReporte)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NSReporte, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NSReporte)
+                @Html.ValidationMessageFor(model => model.NSReporte)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

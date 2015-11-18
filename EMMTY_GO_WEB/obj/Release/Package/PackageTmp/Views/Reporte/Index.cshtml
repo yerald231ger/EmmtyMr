@@ -1,0 +1,63 @@
+﻿@model IEnumerable<EMMTY_GO_WEB.Models.Reporte>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaReporte)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CorrectivoReporte)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PreventivoReporte)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TecnicoReporte)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NombreReporte)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NSReporte)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaReporte)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CorrectivoReporte)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PreventivoReporte)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TecnicoReporte)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NombreReporte)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NSReporte)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdReporte }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdReporte }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdReporte })
+        </td>
+    </tr>
+}
+
+</table>

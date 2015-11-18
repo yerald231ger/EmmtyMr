@@ -1,0 +1,54 @@
+﻿@model EMMTY_GO_WEB.Models.PC
+
+@{
+    ViewBag.Title = "Informacion";
+}
+
+<h2>Informacion de PC</h2>
+
+<div>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NSPC)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NSPC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NombrePC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombrePC)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MarcaPC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MarcaPC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModeloPC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModeloPC)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.OSPC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OSPC)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.IdPC }) |
+    @Html.ActionLink("Regresar a la lista", "Index")
+</p>

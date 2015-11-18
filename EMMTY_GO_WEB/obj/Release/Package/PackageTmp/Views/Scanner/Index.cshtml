@@ -1,0 +1,41 @@
+﻿@using GridMvc.Html
+@model IEnumerable<EMMTY_GO_WEB.Models.Scanner>
+
+@{
+    ViewBag.Title = "Scanners";
+}
+
+<h2>Listado de Scanners</h2>
+
+@if (User.IsInRole("Admin"))
+{
+    <p>
+        @Html.ActionLink("Registrar nuevo Scanner", "Create")
+    </p>
+}
+
+<div id="ListTableId" class="table-responsive">@Html.Grid(Model).Columns(columns =>
+{
+    columns.Add(c => c.NSScanner).Titled(Html.DisplayNameFor(c => c.NSScanner).ToHtmlString()).Filterable(true).Sanitized(false);
+    columns.Add(c => c.NombreScanner).Titled(Html.DisplayNameFor(c => c.NombreScanner).ToHtmlString());
+    columns.Add(c => c.MarcaScanner).Titled(Html.DisplayNameFor(c => c.MarcaScanner).ToHtmlString());
+    columns.Add(c => c.ModeloScanner).Titled(Html.DisplayNameFor(c => c.ModeloScanner).ToHtmlString());
+    columns.Add().Sanitized(false).Encoded(false).RenderValueAs(
+        o =>
+        {
+            var added = "";
+            if (User.IsInRole("Admin"))
+                added = Html.ActionLink("Editar", "Edit", new { id = o.IdScanner }).ToHtmlString();
+            added += " | " + @Html.ActionLink("Info", "Details", new { id = o.IdScanner });
+            return added + (" | " + Html.ActionLink("Eliminar", "Delete", new { id = o.IdScanner }).ToHtmlString());
+        });
+}).WithPaging(10).Sortable(true)</div>
+@section scripts
+{
+    <script>
+        $(document).ready(function() {
+            $("#ListTableId table:first").addClass("table-condensed");
+        });
+    </script>
+}
+

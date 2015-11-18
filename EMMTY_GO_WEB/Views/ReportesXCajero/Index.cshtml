@@ -1,0 +1,39 @@
+﻿@model IEnumerable<EMMTY_GO_WEB.Models.ReportesCajero>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Cajeros.NSCajero)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Reportes.NSReporte)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cajeros.NSCajero)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Reportes.NSReporte)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdReporteCajero }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdReporteCajero }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdReporteCajero })
+        </td>
+    </tr>
+}
+
+</table>

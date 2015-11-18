@@ -1,0 +1,51 @@
+﻿@model EMMTY_GO_WEB.Models.ToneleroA
+
+@{
+    ViewBag.Title = "Eliminar";
+}
+<h3>Seguro que deceas eliminar este Tonelero A?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NSTonelero)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NSTonelero)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreTonelero)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreTonelero)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MarcaTonelero)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MarcaTonelero)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModeloTonelero)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModeloTonelero)
+        </dd>
+
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink("Regresar a la lista", "Index")
+        </div>
+    }
+</div>

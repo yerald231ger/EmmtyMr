@@ -1,0 +1,53 @@
+﻿@model EMMTY_GO_WEB.Models.Tarjeta
+
+@{
+    ViewBag.Title = "Eliminar";
+}
+
+<h3>Seguro deceas eliminar esta Tarjeta?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NSTarjeta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NSTarjeta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreTarjeta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreTarjeta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MarcaTarjeta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MarcaTarjeta)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ModeloTarjeta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModeloTarjeta)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink("Regresar a la lista", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,43 @@
+﻿@using GridMvc.Html
+@model IEnumerable<EMMTY_GO_WEB.Models.Aceptador_Billetes>
+
+@{
+    ViewBag.Title = "Billeteros";
+}
+
+<h2>Listado de Billeteros</h2>
+
+@if (User.IsInRole("Admin"))
+{
+    <p>
+        @Html.ActionLink("Registrar nuevo Billetero", "Create")
+    </p>
+}
+
+<div id="ListTableId" class="table-responsive">
+    @Html.Grid(Model).Columns(columns =>
+         {
+             columns.Add(c => c.NSAceptador_Billetes).Titled(Html.DisplayNameFor(c => c.NSAceptador_Billetes).ToHtmlString()).Filterable(true).Sanitized(false);
+             columns.Add(c => c.NombreAceptador_Billetes).Titled(Html.DisplayNameFor(c => c.NombreAceptador_Billetes).ToHtmlString());
+             columns.Add(c => c.MarcaAceptador_Billetes).Titled(Html.DisplayNameFor(c => c.MarcaAceptador_Billetes).ToHtmlString());
+             columns.Add(c => c.ModeloAceptador_Billetes).Titled(Html.DisplayNameFor(c => c.ModeloAceptador_Billetes).ToHtmlString());
+             columns.Add().Sanitized(false).Encoded(false).RenderValueAs(
+                 o =>
+                 {
+                     var added = "";
+                     if (User.IsInRole("Admin"))
+                         added = Html.ActionLink("Editar", "Edit", new {id = o.IdAceptador_Billetes}).ToHtmlString();
+                     added += " | " + @Html.ActionLink("info", "Details", new {id = o.IdAceptador_Billetes});
+                     return added + (" | " + Html.ActionLink("Eliminar", "Delete", new {id = o.IdAceptador_Billetes}).ToHtmlString());
+                 });
+         }).WithPaging(10).Sortable(true)
+</div>
+@section scripts
+{
+    <script>
+        $(document).ready(function() {
+            $("#ListTableId table:first").addClass("table-condensed");
+        });
+    </script>
+}
+

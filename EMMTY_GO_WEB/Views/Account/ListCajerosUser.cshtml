@@ -1,0 +1,91 @@
+﻿@using EMMTY_GO_WEB.Models
+@model EMMTY_GO_WEB.Models.ApplicationUser
+
+@{
+    ViewBag.Title = "Cajeros Client";
+}
+@{
+    var tblCajerosA = (Dictionary<Cajero,bool>) ViewBag.TblCajerosA;
+    var tblCajerosB = (Dictionary<Cajero,bool>) ViewBag.TblCajerosB;
+    var tblCajerosC = (Dictionary<Cajero,bool>) ViewBag.TblCajerosC;
+}
+
+
+<h2>Cajeros @Model.Cliente.NombreCliente</h2>
+
+<h4>Quitar / Asignar Cajeros, Usuario: @Model.UserName</h4>
+<hr/>
+
+<div class="row">
+   @using (@Html.BeginForm("AddOrRemoveCajerosUser","Account"))
+   {
+       @Html.AntiForgeryToken()
+       @Html.HiddenFor(model => model.Id);
+       <div class="form-horizontal">
+           <div class="form-group">
+               <div class="col-md-4 col-sm-6">
+                   <div class="table-responsive">
+                       <table class="table table-hover table-condensed">
+                           <tr>
+                               <th><span class="glyphicon glyphicon-check"></span></th>
+                               <th>@Html.DisplayNameFor(model => model.Cajeros.First().NSCajero)</th>
+                               <th>@Html.DisplayNameFor(model => model.Cajeros.First().NombreCajero)</th>
+                           </tr>
+                           @foreach (var pair in tblCajerosA)
+                           {
+                               <tr>
+                                   <td>@Html.CheckBox("NS" + ":" + pair.Key.NSCajero, pair.Value)</td>
+                                   <td>@pair.Key.NSCajero</td>
+                                   <td>@pair.Key.NombreCajero</td>
+                               </tr>
+                           }
+                       </table>
+                   </div>
+               </div>
+               <div class="col-md-4 col-sm-6">
+                   <div class="table-responsive">
+                       <table class="table table-hover table-condensed">
+                           <tr>
+                               <th><span class="glyphicon glyphicon-check"></span></th>
+                               <th>@Html.DisplayNameFor(model => model.Cajeros.First().NSCajero)</th>
+                               <th>@Html.DisplayNameFor(model => model.Cajeros.First().NombreCajero)</th>
+                           </tr>
+                           @foreach (var pair in tblCajerosB)
+                           {
+                               <tr>
+                                   <td>@Html.CheckBox("NS" + ":" + pair.Key.NSCajero, pair.Value)</td>
+                                   <td>@pair.Key.NSCajero</td>
+                                   <td>@pair.Key.NombreCajero</td>
+                               </tr>
+                           }
+                       </table>
+                   </div>
+               </div>
+               <div class="col-md-4 col-sm-6">
+                   <div class="table-responsive">
+                       <table class="table table-hover table-condensed">
+                           <tr>
+                               <th><span class="glyphicon glyphicon-check"></span></th>
+                               <th>@Html.DisplayNameFor(model => model.Cajeros.First().NSCajero)</th>
+                               <th>@Html.DisplayNameFor(model => model.Cajeros.First().NombreCajero)</th>
+                           </tr>
+                           @foreach (var pair in tblCajerosC)
+                           {
+                               <tr>
+                                   <td>@Html.CheckBox("NS" + ":" + pair.Key.NSCajero, pair.Value)</td>
+                                   <td>@pair.Key.NSCajero</td>
+                                   <td>@pair.Key.NombreCajero</td>
+                               </tr>
+                           }
+                       </table>
+                   </div>
+               </div>
+           </div>
+           <div class="form-group">
+               <div class="col-md-offset-2 col-md-10">
+                   <input type="submit" value="Save" class="btn btn-default" />
+               </div>
+           </div>
+       </div>
+   }
+    </div>

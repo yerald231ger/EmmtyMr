@@ -1,0 +1,51 @@
+﻿@model EMMTY_GO_WEB.Models.Dispensador
+
+@{
+    ViewBag.Title = "Eliminar";
+}
+<h3>Seguro que deceas eliminar este Dispensador?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NSDispensador)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NSDispensador)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreDispensador)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreDispensador)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MarcaDispensador)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MarcaDispensador)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModeloDispensador)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModeloDispensador)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink("Regresar a la lista", "Index")
+        </div>
+    }
+</div>

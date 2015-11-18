@@ -1,0 +1,313 @@
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\obj\Debug\EMMTY_GO_WEB.dll
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\EMMTY_GO_WEB.dll.config
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\EMMTY_GO_WEB.dll
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\EMMTY_GO_WEB.pdb
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Antlr3.Runtime.dll
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\EntityFramework.dll
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\EntityFramework.SqlServer.dll
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.dll
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.dll
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Newtonsoft.Json.dll
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Owin.dll
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.Helpers.dll
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.Mvc.dll
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.Optimization.dll
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.Razor.dll
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.WebPages.Deployment.dll
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.WebPages.dll
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.WebPages.Razor.dll
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\WebGrease.dll
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\EntityFramework.xml
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\EntityFramework.SqlServer.xml
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.Helpers.xml
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.Mvc.xml
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.Optimization.xml
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.Razor.xml
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.WebPages.xml
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.WebPages.Deployment.xml
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.WebPages.Razor.xml
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Newtonsoft.Json.xml
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Antlr3.Runtime.pdb
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.xml
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.xml
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\obj\Debug\EMMTY_GO_WEB.pdb
+C:\Users\GerardoEMMTY\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\EMMTY_GO_WEB.dll.config
+C:\Users\GerardoEMMTY\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\EMMTY_GO_WEB.dll
+C:\Users\GerardoEMMTY\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\EMMTY_GO_WEB.pdb
+C:\Users\GerardoEMMTY\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Antlr3.Runtime.dll
+C:\Users\GerardoEMMTY\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\EntityFramework.dll
+C:\Users\GerardoEMMTY\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\EntityFramework.SqlServer.dll
+C:\Users\GerardoEMMTY\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\GerardoEMMTY\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\GerardoEMMTY\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\GerardoEMMTY\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.dll
+C:\Users\GerardoEMMTY\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\GerardoEMMTY\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\GerardoEMMTY\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.dll
+C:\Users\GerardoEMMTY\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\GerardoEMMTY\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\GerardoEMMTY\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\GerardoEMMTY\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\GerardoEMMTY\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\GerardoEMMTY\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\GerardoEMMTY\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Newtonsoft.Json.dll
+C:\Users\GerardoEMMTY\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Owin.dll
+C:\Users\GerardoEMMTY\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.Helpers.dll
+C:\Users\GerardoEMMTY\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.Mvc.dll
+C:\Users\GerardoEMMTY\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.Optimization.dll
+C:\Users\GerardoEMMTY\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.Razor.dll
+C:\Users\GerardoEMMTY\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.WebPages.Deployment.dll
+C:\Users\GerardoEMMTY\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.WebPages.dll
+C:\Users\GerardoEMMTY\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.WebPages.Razor.dll
+C:\Users\GerardoEMMTY\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\WebGrease.dll
+C:\Users\GerardoEMMTY\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\EntityFramework.xml
+C:\Users\GerardoEMMTY\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\EntityFramework.SqlServer.xml
+C:\Users\GerardoEMMTY\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.Helpers.xml
+C:\Users\GerardoEMMTY\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.Mvc.xml
+C:\Users\GerardoEMMTY\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.Optimization.xml
+C:\Users\GerardoEMMTY\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.Razor.xml
+C:\Users\GerardoEMMTY\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.WebPages.xml
+C:\Users\GerardoEMMTY\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.WebPages.Deployment.xml
+C:\Users\GerardoEMMTY\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.WebPages.Razor.xml
+C:\Users\GerardoEMMTY\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Newtonsoft.Json.xml
+C:\Users\GerardoEMMTY\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Antlr3.Runtime.pdb
+C:\Users\GerardoEMMTY\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\GerardoEMMTY\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\GerardoEMMTY\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\GerardoEMMTY\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.xml
+C:\Users\GerardoEMMTY\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\GerardoEMMTY\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.xml
+C:\Users\GerardoEMMTY\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\GerardoEMMTY\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\GerardoEMMTY\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\GerardoEMMTY\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\GerardoEMMTY\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\GerardoEMMTY\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\GerardoEMMTY\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\obj\Debug\EMMTY_GO_WEB.dll
+C:\Users\GerardoEMMTY\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\obj\Debug\EMMTY_GO_WEB.pdb
+C:\Users\GerardoEMMTY\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\obj\Debug\EMMTY_GO_WEB.csprojResolveAssemblyReference.cache
+H:\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\EMMTY_GO_WEB.dll.config
+H:\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\EMMTY_GO_WEB.dll
+H:\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\EMMTY_GO_WEB.pdb
+H:\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Antlr3.Runtime.dll
+H:\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\EntityFramework.dll
+H:\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\EntityFramework.SqlServer.dll
+H:\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.AspNet.Identity.Core.dll
+H:\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+H:\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.AspNet.Identity.Owin.dll
+H:\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.dll
+H:\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Host.SystemWeb.dll
+H:\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.Cookies.dll
+H:\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.dll
+H:\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.Facebook.dll
+H:\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.Google.dll
+H:\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+H:\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.OAuth.dll
+H:\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.Twitter.dll
+H:\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Web.Infrastructure.dll
+H:\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Newtonsoft.Json.dll
+H:\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Owin.dll
+H:\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.Helpers.dll
+H:\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.Mvc.dll
+H:\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.Optimization.dll
+H:\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.Razor.dll
+H:\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.WebPages.Deployment.dll
+H:\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.WebPages.dll
+H:\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.WebPages.Razor.dll
+H:\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\WebGrease.dll
+H:\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\EntityFramework.xml
+H:\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\EntityFramework.SqlServer.xml
+H:\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.Helpers.xml
+H:\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.Mvc.xml
+H:\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.Optimization.xml
+H:\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.Razor.xml
+H:\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.WebPages.xml
+H:\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.WebPages.Deployment.xml
+H:\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.WebPages.Razor.xml
+H:\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Newtonsoft.Json.xml
+H:\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Antlr3.Runtime.pdb
+H:\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.AspNet.Identity.Core.xml
+H:\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.AspNet.Identity.Owin.xml
+H:\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+H:\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.xml
+H:\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Host.SystemWeb.xml
+H:\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.xml
+H:\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.Facebook.xml
+H:\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.Cookies.xml
+H:\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.OAuth.xml
+H:\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.Google.xml
+H:\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.Twitter.xml
+H:\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+H:\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\obj\Debug\EMMTY_GO_WEB.csprojResolveAssemblyReference.cache
+H:\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\obj\Debug\EMMTY_GO_WEB.dll
+H:\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\obj\Debug\EMMTY_GO_WEB.pdb
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.AspNet.SignalR.Core.dll
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.AspNet.SignalR.SqlServer.dll
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.AspNet.SignalR.Core.xml
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.AspNet.SignalR.SqlServer.xml
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\EMMTY_GO_WEB.dll.config
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\EMMTY_GO_WEB.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\EMMTY_GO_WEB.pdb
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Antlr3.Runtime.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\EntityFramework.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\EntityFramework.SqlServer.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.AspNet.SignalR.Core.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.AspNet.SignalR.SqlServer.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Newtonsoft.Json.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Owin.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.Helpers.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.Mvc.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.Optimization.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.Razor.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.WebPages.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.WebPages.Razor.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\WebGrease.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Antlr3.Runtime.pdb
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\EntityFramework.xml
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\EntityFramework.SqlServer.xml
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.AspNet.SignalR.Core.xml
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.AspNet.SignalR.SqlServer.xml
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.xml
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.xml
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Newtonsoft.Json.xml
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.Helpers.xml
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.Mvc.xml
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.Optimization.xml
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.Razor.xml
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.WebPages.xml
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.WebPages.Razor.xml
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\obj\Debug\EMMTY_GO_WEB.csprojResolveAssemblyReference.cache
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\obj\Debug\EMMTY_GO_WEB.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto.modificada\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\obj\Debug\EMMTY_GO_WEB.pdb
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\obj\Debug\EMMTY_GO_WEB.csprojResolveAssemblyReference.cache
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\GridMvc.dll
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\obj\Debug\EMMTY_GO_WEB.Migrations.emmtygo1.resources
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\obj\Debug\EMMTY_GO_WEB.csproj.GenerateResource.Cache
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\obj\Debug\EMMTY_GO_WEB.Migrations.emmtygo2.resources
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\EMMTY_GO_WEB.dll.config
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\EMMTY_GO_WEB.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\EMMTY_GO_WEB.pdb
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Antlr3.Runtime.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\EntityFramework.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\EntityFramework.SqlServer.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\GridMvc.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.AspNet.SignalR.Core.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.AspNet.SignalR.SqlServer.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Newtonsoft.Json.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Owin.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.Helpers.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.Mvc.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.Optimization.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.Razor.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.WebPages.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.WebPages.Razor.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\WebGrease.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Antlr3.Runtime.pdb
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\EntityFramework.xml
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\EntityFramework.SqlServer.xml
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.AspNet.SignalR.Core.xml
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.AspNet.SignalR.SqlServer.xml
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.xml
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.xml
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\Newtonsoft.Json.xml
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.Helpers.xml
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.Mvc.xml
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.Optimization.xml
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.Razor.xml
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.WebPages.xml
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\bin\System.Web.WebPages.Razor.xml
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\obj\Debug\EMMTY_GO_WEB.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\obj\Debug\EMMTY_GO_WEB.pdb
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\obj\Debug\EMMTY_GO_WEB.Migrations.emmtygo1.resources
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\obj\Debug\EMMTY_GO_WEB.csproj.GenerateResource.Cache
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\obj\Debug\EMMTY_GO_WEB.Migrations.emmtygo2.resources
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\obj\Debug\EMMTY_GO_WEB.Migrations.emmtygo3.resources
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\obj\Debug\EMMTY_GO_WEB.Migrations.emmtygo3.resources
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\obj\Debug\EMMTY_GO_WEB.Migrations.emmtygo4.resources
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\obj\Debug\EMMTY_GO_WEB.Migrations.emmtygo4.resources
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\obj\Debug\EMMTY_GO_WEB.Migrations.emmtygo5.resources
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\obj\Debug\EMMTY_GO_WEB.Migrations.emmtygo6.resources
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\obj\Debug\EMMTY_GO_WEB.Migrations.emmtygo7.resources
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\obj\Debug\EMMTY_GO_WEB.Migrations.emmtygo5.resources
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\obj\Debug\EMMTY_GO_WEB.Migrations.emmtygo6.resources
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\obj\Debug\EMMTY_GO_WEB.Migrations.emmtygo7.resources
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\obj\Debug\EMMTY_GO_WEB.Migrations.emmtymr1.resources
+C:\Users\yeral_000\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\obj\Debug\EMMTY_GO_WEB.Migrations.emmtymr1.resources
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\EMMTY_Monitoreo_Remoto\EMMTY_GO_WEB\obj\Debug\EMMTY_GO_WEB.csprojResolveAssemblyReference.cache

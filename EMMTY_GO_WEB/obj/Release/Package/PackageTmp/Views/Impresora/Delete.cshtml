@@ -1,0 +1,55 @@
+﻿@model EMMTY_GO_WEB.Models.Impresora
+
+@{
+    ViewBag.Title = "Eliminar";
+}
+
+<h2>Delete</h2>
+
+<h3>Seguro deceas eliminar esta Impresora?</h3>
+<div>
+    <h4>Impresora</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NSImpresora)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NSImpresora)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreImpresora)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreImpresora)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MarcaImpresora)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MarcaImpresora)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModeloImpresora)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModeloImpresora)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink("Regresar a la lista", "Index")
+        </div>
+    }
+</div>

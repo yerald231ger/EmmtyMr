@@ -1,0 +1,289 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EMMTY_GO_ModelStoreContainer" CdmEntityContainer="EMMTY_GO_Entities">
+    <EntitySetMapping Name="Cajeros">
+      <EntityTypeMapping TypeName="IsTypeOf(EMMTY_GO_Model.Cajero)">
+        <MappingFragment StoreEntitySet="Cajeros">
+          <ScalarProperty Name="IdAceptador_Moneda" ColumnName="IdAceptador_Moneda" />
+          <ScalarProperty Name="IdAceptador_Billete" ColumnName="IdAceptador_Billete" />
+          <ScalarProperty Name="IdCajero" ColumnName="IdCajero" />
+          <ScalarProperty Name="ColorCajero" ColumnName="ColorCajero" />
+          <ScalarProperty Name="FechaEntregaCajero" ColumnName="FechaEntregaCajero" />
+          <ScalarProperty Name="FechaSalidaCajero" ColumnName="FechaSalidaCajero" />
+          <ScalarProperty Name="FechaEnsambladoCajero" ColumnName="FechaEnsambladoCajero" />
+          <ScalarProperty Name="NSCajero" ColumnName="NSCajero" />
+          <ScalarProperty Name="NombreCajero" ColumnName="NombreCajero" />
+          <ScalarProperty Name="NombreEnsamblador" ColumnName="NombreEnsamblador" />
+          <ScalarProperty Name="UbicacionCajero" ColumnName="UbicacionCajero" />
+          <ScalarProperty Name="ErrorCajero" ColumnName="ErrorCajero" />
+          <ScalarProperty Name="IdDispensador" ColumnName="IdDispensador" />
+          <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+          <ScalarProperty Name="IdPC" ColumnName="IdPC" />
+          <ScalarProperty Name="IdImpresora" ColumnName="IdImpresora" />
+          <ScalarProperty Name="IdTarjeta" ColumnName="IdTarjeta" />
+          <ScalarProperty Name="IdUPS" ColumnName="IdUPS" />
+          <ScalarProperty Name="IdScanner" ColumnName="IdScanner" />
+          <ScalarProperty Name="IdMonitor" ColumnName="IdMonitor" />
+          <ScalarProperty Name="IdSucursal" ColumnName="IdSucursal" />
+          <ScalarProperty Name="StatusCajero" ColumnName="StatusCajero" />
+          <ScalarProperty Name="ModeloCajero" ColumnName="ModeloCajero" />
+          <ScalarProperty Name="TipoCajero" ColumnName="TipoCajero" />
+          <ScalarProperty Name="IdToneleroA" ColumnName="IdToneleroA" />
+          <ScalarProperty Name="IdToneleroB" ColumnName="IdToneleroB" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clientes">
+      <EntityTypeMapping TypeName="IsTypeOf(EMMTY_GO_Model.Cliente)">
+        <MappingFragment StoreEntitySet="Clientes">
+          <ScalarProperty Name="IdAspNetUsers" ColumnName="IdAspNetUsers" />
+          <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+          <ScalarProperty Name="PasswordCliente" ColumnName="PasswordCliente" />
+          <ScalarProperty Name="UsernameCliente" ColumnName="UsernameCliente" />
+          <ScalarProperty Name="LicenciaStatus" ColumnName="LicenciaStatus" />
+          <ScalarProperty Name="NombreCliente" ColumnName="NombreCliente" />
+          <ScalarProperty Name="TipoCliente" ColumnName="TipoCliente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dispensadores">
+      <EntityTypeMapping TypeName="IsTypeOf(EMMTY_GO_Model.Dispensador)">
+        <MappingFragment StoreEntitySet="Dispensadores">
+          <ScalarProperty Name="IdDispensador" ColumnName="IdDispensador" />
+          <ScalarProperty Name="EfectivoActualDispensador" ColumnName="EfectivoActualDispensador" />
+          <ScalarProperty Name="EfectivoDispensadoDispensador" ColumnName="EfectivoDispensadoDispensador" />
+          <ScalarProperty Name="EfectivoInicialDispensador" ColumnName="EfectivoInicialDispensador" />
+          <ScalarProperty Name="ModeloDispensador" ColumnName="ModeloDispensador" />
+          <ScalarProperty Name="NSDispensador" ColumnName="NSDispensador" />
+          <ScalarProperty Name="StatusDispensador" ColumnName="StatusDispensador" />
+          <ScalarProperty Name="TipoBillete" ColumnName="TipoBillete" />
+          <ScalarProperty Name="ErrorDispensador" ColumnName="ErrorDispensador" />
+          <ScalarProperty Name="MarcaDispensador" ColumnName="MarcaDispensador" />
+          <ScalarProperty Name="NombreDispensador" ColumnName="NombreDispensador" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Impresoras">
+      <EntityTypeMapping TypeName="IsTypeOf(EMMTY_GO_Model.Impresora)">
+        <MappingFragment StoreEntitySet="Impresoras">
+          <ScalarProperty Name="IdImpresora" ColumnName="IdImpresora" />
+          <ScalarProperty Name="NSImpresora" ColumnName="NSImpresora" />
+          <ScalarProperty Name="NombreImpresora" ColumnName="NombreImpresora" />
+          <ScalarProperty Name="ModeloImpresora" ColumnName="ModeloImpresora" />
+          <ScalarProperty Name="StatusImpresora" ColumnName="StatusImpresora" />
+          <ScalarProperty Name="PapelImpresora" ColumnName="PapelImpresora" />
+          <ScalarProperty Name="ErrorImpresora" ColumnName="ErrorImpresora" />
+          <ScalarProperty Name="MarcaImpresora" ColumnName="MarcaImpresora" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Monitores">
+      <EntityTypeMapping TypeName="IsTypeOf(EMMTY_GO_Model.Monitor)">
+        <MappingFragment StoreEntitySet="Monitores">
+          <ScalarProperty Name="IdMonitor" ColumnName="IdMonitor" />
+          <ScalarProperty Name="MarcaMonitor" ColumnName="MarcaMonitor" />
+          <ScalarProperty Name="ModeloMonitor" ColumnName="ModeloMonitor" />
+          <ScalarProperty Name="NombreMonitor" ColumnName="NombreMonitor" />
+          <ScalarProperty Name="NSMonitor" ColumnName="NSMonitor" />
+          <ScalarProperty Name="StatusMonitor" ColumnName="StatusMonitor" />
+          <ScalarProperty Name="ErrorMonitor" ColumnName="ErrorMonitor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PCes">
+      <EntityTypeMapping TypeName="IsTypeOf(EMMTY_GO_Model.PC)">
+        <MappingFragment StoreEntitySet="PCes">
+          <ScalarProperty Name="IdPC" ColumnName="IdPC" />
+          <ScalarProperty Name="MarcaPC" ColumnName="MarcaPC" />
+          <ScalarProperty Name="ModeloPC" ColumnName="ModeloPC" />
+          <ScalarProperty Name="NombrePC" ColumnName="NombrePC" />
+          <ScalarProperty Name="NSPC" ColumnName="NSPC" />
+          <ScalarProperty Name="OSPC" ColumnName="OSPC" />
+          <ScalarProperty Name="StatusPC" ColumnName="StatusPC" />
+          <ScalarProperty Name="ErrorPC" ColumnName="ErrorPC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reportes">
+      <EntityTypeMapping TypeName="IsTypeOf(EMMTY_GO_Model.Reporte)">
+        <MappingFragment StoreEntitySet="Reportes">
+          <ScalarProperty Name="IdReporte" ColumnName="IdReporte" />
+          <ScalarProperty Name="FechaReporte" ColumnName="FechaReporte" />
+          <ScalarProperty Name="CorrectivoReporte" ColumnName="CorrectivoReporte" />
+          <ScalarProperty Name="PreventivoReporte" ColumnName="PreventivoReporte" />
+          <ScalarProperty Name="TecnicoReporte" ColumnName="TecnicoReporte" />
+          <ScalarProperty Name="NombreReporte" ColumnName="NombreReporte" />
+          <ScalarProperty Name="NSReporte" ColumnName="NSReporte" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReportesXCajero">
+      <EntityTypeMapping TypeName="IsTypeOf(EMMTY_GO_Model.ReportesXCajero)">
+        <MappingFragment StoreEntitySet="ReportesXCajero">
+          <ScalarProperty Name="IdReporteXCajero" ColumnName="IdReporteXCajero" />
+          <ScalarProperty Name="IdReporte" ColumnName="IdReporte" />
+          <ScalarProperty Name="IdCajero" ColumnName="IdCajero" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Scanners">
+      <EntityTypeMapping TypeName="IsTypeOf(EMMTY_GO_Model.Scanner)">
+        <MappingFragment StoreEntitySet="Scanners">
+          <ScalarProperty Name="IdScanner" ColumnName="IdScanner" />
+          <ScalarProperty Name="MarcaScanner" ColumnName="MarcaScanner" />
+          <ScalarProperty Name="MoneloScanner" ColumnName="MoneloScanner" />
+          <ScalarProperty Name="NombreScanner" ColumnName="NombreScanner" />
+          <ScalarProperty Name="NSScanner" ColumnName="NSScanner" />
+          <ScalarProperty Name="StatusScanner" ColumnName="StatusScanner" />
+          <ScalarProperty Name="ErrorScanner" ColumnName="ErrorScanner" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sucursales">
+      <EntityTypeMapping TypeName="IsTypeOf(EMMTY_GO_Model.Sucursal)">
+        <MappingFragment StoreEntitySet="Sucursales">
+          <ScalarProperty Name="IdSucursal" ColumnName="IdSucursal" />
+          <ScalarProperty Name="SupervisorCajero" ColumnName="SupervisorCajero" />
+          <ScalarProperty Name="EmpresaSucursal" ColumnName="EmpresaSucursal" />
+          <ScalarProperty Name="TelefonoSucursal" ColumnName="TelefonoSucursal" />
+          <ScalarProperty Name="GerenteSucursal" ColumnName="GerenteSucursal" />
+          <ScalarProperty Name="DireccionSucursal" ColumnName="DireccionSucursal" />
+          <ScalarProperty Name="NombreSucursal" ColumnName="NombreSucursal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tarjetas">
+      <EntityTypeMapping TypeName="IsTypeOf(EMMTY_GO_Model.Tarjeta)">
+        <MappingFragment StoreEntitySet="Tarjetas">
+          <ScalarProperty Name="IdTarjeta" ColumnName="IdTarjeta" />
+          <ScalarProperty Name="ModeloTarjeta" ColumnName="ModeloTarjeta" />
+          <ScalarProperty Name="NSTarjeta" ColumnName="NSTarjeta" />
+          <ScalarProperty Name="StatusTarjeta" ColumnName="StatusTarjeta" />
+          <ScalarProperty Name="ErrorTarjeta" ColumnName="ErrorTarjeta" />
+          <ScalarProperty Name="MarcaTarjeta" ColumnName="MarcaTarjeta" />
+          <ScalarProperty Name="NombreTarjeta" ColumnName="NombreTarjeta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Toneleros">
+      <EntityTypeMapping TypeName="IsTypeOf(EMMTY_GO_Model.Tonelero)">
+        <MappingFragment StoreEntitySet="Toneleros">
+          <ScalarProperty Name="IdTonelero" ColumnName="IdTonelero" />
+          <ScalarProperty Name="NombreTonelero" ColumnName="NombreTonelero" />
+          <ScalarProperty Name="ModeloTonelero" ColumnName="ModeloTonelero" />
+          <ScalarProperty Name="NSTonelero" ColumnName="NSTonelero" />
+          <ScalarProperty Name="StatusTonelero" ColumnName="StatusTonelero" />
+          <ScalarProperty Name="TipoMoneda" ColumnName="TipoMoneda" />
+          <ScalarProperty Name="EfectivoActualTonelero" ColumnName="EfectivoActualTonelero" />
+          <ScalarProperty Name="EfectivoDispensadoTonelero" ColumnName="EfectivoDispensadoTonelero" />
+          <ScalarProperty Name="EfectivoInicialTonelero" ColumnName="EfectivoInicialTonelero" />
+          <ScalarProperty Name="ErrorTonelero" ColumnName="ErrorTonelero" />
+          <ScalarProperty Name="MarcaTonelero" ColumnName="MarcaTonelero" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UPSes">
+      <EntityTypeMapping TypeName="IsTypeOf(EMMTY_GO_Model.UPS)">
+        <MappingFragment StoreEntitySet="UPSes">
+          <ScalarProperty Name="IdUPS" ColumnName="IdUPS" />
+          <ScalarProperty Name="MarcaUPS" ColumnName="MarcaUPS" />
+          <ScalarProperty Name="ModeloUPS" ColumnName="ModeloUPS" />
+          <ScalarProperty Name="NombreUPS" ColumnName="NombreUPS" />
+          <ScalarProperty Name="NSUPS" ColumnName="NSUPS" />
+          <ScalarProperty Name="StatusUPS" ColumnName="StatusUPS" />
+          <ScalarProperty Name="ErrorUPS" ColumnName="ErrorUPS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="EMMTY_GO_Model.C__MigrationHistory">
+        <MappingFragment StoreEntitySet="__MigrationHistory">
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetRoles">
+      <EntityTypeMapping TypeName="EMMTY_GO_Model.AspNetRoles">
+        <MappingFragment StoreEntitySet="AspNetRoles">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserClaims">
+      <EntityTypeMapping TypeName="EMMTY_GO_Model.AspNetUserClaims">
+        <MappingFragment StoreEntitySet="AspNetUserClaims">
+          <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+          <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+          <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserLogins">
+      <EntityTypeMapping TypeName="EMMTY_GO_Model.AspNetUserLogins">
+        <MappingFragment StoreEntitySet="AspNetUserLogins">
+          <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+          <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUsers">
+      <EntityTypeMapping TypeName="EMMTY_GO_Model.AspNetUsers">
+        <MappingFragment StoreEntitySet="AspNetUsers">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+          <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+          <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+          <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+          <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Hometown" ColumnName="Hometown" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="AspNetUserRoles" TypeName="EMMTY_GO_Model.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+      <EndProperty Name="AspNetUsers">
+        <ScalarProperty Name="Id" ColumnName="UserId" />
+      </EndProperty>
+      <EndProperty Name="AspNetRoles">
+        <ScalarProperty Name="Id" ColumnName="RoleId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <EntitySetMapping Name="Aceptadores_Billetes">
+      <EntityTypeMapping TypeName="EMMTY_GO_Model.Aceptador_Billetes">
+        <MappingFragment StoreEntitySet="Aceptadores_Billetes">
+          <ScalarProperty Name="MarcaAceptador_Billetes" ColumnName="MarcaAceptador_Billetes" />
+          <ScalarProperty Name="ErrorAceptador_Billetes" ColumnName="ErrorAceptador_Billetes" />
+          <ScalarProperty Name="StatusAceptador_Billetes" ColumnName="StatusAceptador_Billetes" />
+          <ScalarProperty Name="NSAceptador_Billetes" ColumnName="NSAceptador_Billetes" />
+          <ScalarProperty Name="NombreAceptador_Billetes" ColumnName="NombreAceptador_Billetes" />
+          <ScalarProperty Name="ModeloAceptador_Billetes" ColumnName="ModeloAceptador_Billetes" />
+          <ScalarProperty Name="IdAceptador_Billetes" ColumnName="IdAceptador_Billetes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Aceptadores_Monedas">
+      <EntityTypeMapping TypeName="EMMTY_GO_Model.Aceptador_Monedas">
+        <MappingFragment StoreEntitySet="Aceptadores_Monedas">
+          <ScalarProperty Name="MarcaAceptador_Monedas" ColumnName="MarcaAceptador_Monedas" />
+          <ScalarProperty Name="ErrorAceptador_Monedas" ColumnName="ErrorAceptador_Monedas" />
+          <ScalarProperty Name="StatusAceptador_Monedas" ColumnName="StatusAceptador_Monedas" />
+          <ScalarProperty Name="NSAceptador_Monedas" ColumnName="NSAceptador_Monedas" />
+          <ScalarProperty Name="NombreAceptador_Monedas" ColumnName="NombreAceptador_Monedas" />
+          <ScalarProperty Name="ModeloAceptador_Monedas" ColumnName="ModeloAceptador_Monedas" />
+          <ScalarProperty Name="IdAceptador_Monedas" ColumnName="IdAceptador_Monedas" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="16bb73a90ba74377947581bfeb85acd8" Name="Diagram1" ZoomLevel="82">
+        <EntityTypeShape EntityType="EMMTY_GO_Model.Aceptador_Billetes" Width="1.5" PointX="12.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EMMTY_GO_Model.Aceptador_Monedas" Width="1.5" PointX="10.375" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EMMTY_GO_Model.Cajero" Width="1.5" PointX="8.875" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EMMTY_GO_Model.Cliente" Width="1.5" PointX="8.25" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EMMTY_GO_Model.Dispensador" Width="1.5" PointX="6.25" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EMMTY_GO_Model.Impresora" Width="1.5" PointX="4.25" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EMMTY_GO_Model.Monitor" Width="1.5" PointX="5.25" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EMMTY_GO_Model.PC" Width="1.5" PointX="5.875" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EMMTY_GO_Model.Reporte" Width="1.5" PointX="14.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EMMTY_GO_Model.ReportesXCajero" Width="1.5" PointX="13.875" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EMMTY_GO_Model.Scanner" Width="1.5" PointX="15.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EMMTY_GO_Model.Sucursal" Width="1.5" PointX="15.125" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EMMTY_GO_Model.Tarjeta" Width="1.5" PointX="12.625" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EMMTY_GO_Model.Tonelero" Width="1.5" PointX="5.125" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EMMTY_GO_Model.UPS" Width="1.5" PointX="12.75" PointY="8" IsExpanded="true" />
+        <AssociationConnector Association="EMMTY_GO_Model.FK_Cajeros_Aceptadores_Billetes" ManuallyRouted="false" />
+        <AssociationConnector Association="EMMTY_GO_Model.FK_Cajeros_Aceptadores_Monedas" ManuallyRouted="false" />
+        <AssociationConnector Association="EMMTY_GO_Model.FK_Cajeros_Clientes" ManuallyRouted="false" />
+        <AssociationConnector Association="EMMTY_GO_Model.FK_Cajeros_Dispensadores" ManuallyRouted="false" />
+        <AssociationConnector Association="EMMTY_GO_Model.FK_Cajeros_Impresoras" ManuallyRouted="false" />
+        <AssociationConnector Association="EMMTY_GO_Model.FK_Cajeros_Monitores" ManuallyRouted="false" />
+        <AssociationConnector Association="EMMTY_GO_Model.FK_Cajeros_PCes" ManuallyRouted="false" />
+        <AssociationConnector Association="EMMTY_GO_Model.FK_Cajeros_Scanners" ManuallyRouted="false" />
+        <AssociationConnector Association="EMMTY_GO_Model.FK_Cajeros_Sucursales" ManuallyRouted="false" />
+        <AssociationConnector Association="EMMTY_GO_Model.FK_Cajeros_Tarjetas" ManuallyRouted="false" />
+        <AssociationConnector Association="EMMTY_GO_Model.FK_Cajeros_TonelerosA" ManuallyRouted="false" />
+        <AssociationConnector Association="EMMTY_GO_Model.FK_Cajeros_TonelerosB" ManuallyRouted="false" />
+        <AssociationConnector Association="EMMTY_GO_Model.FK_Cajeros_UPSes" ManuallyRouted="false" />
+        <AssociationConnector Association="EMMTY_GO_Model.FK_ReportesXCajero_Cajeros" ManuallyRouted="false" />
+        <AssociationConnector Association="EMMTY_GO_Model.FK_ReportesXCajero_Reportes" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

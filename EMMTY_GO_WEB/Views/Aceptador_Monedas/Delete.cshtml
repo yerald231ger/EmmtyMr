@@ -1,0 +1,53 @@
+﻿@model EMMTY_GO_WEB.Models.Aceptador_Monedas
+
+@{
+    ViewBag.Title = "Eliminar";
+}
+<h3>Seguro deceas eliminar este Aceptador de monedas?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NSAceptador_Monedas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NSAceptador_Monedas)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreAceptador_Monedas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreAceptador_Monedas)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MarcaAceptador_Monedas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MarcaAceptador_Monedas)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ModeloAceptador_Monedas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModeloAceptador_Monedas)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink("Regresar a la lista", "Index")
+        </div>
+    }
+</div>

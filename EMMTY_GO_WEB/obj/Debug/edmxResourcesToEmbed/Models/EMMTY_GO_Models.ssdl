@@ -1,0 +1,621 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EMMTY_GO_Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+    <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Aceptadores_Billetes">
+    <Key>
+      <PropertyRef Name="IdAceptador_Billetes" />
+    </Key>
+    <Property Name="IdAceptador_Billetes" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ModeloAceptador_Billetes" Type="varchar" MaxLength="50" />
+    <Property Name="NombreAceptador_Billetes" Type="varchar" MaxLength="50" />
+    <Property Name="NSAceptador_Billetes" Type="varchar" MaxLength="50" />
+    <Property Name="StatusAceptador_Billetes" Type="varchar" MaxLength="50" />
+    <Property Name="ErrorAceptador_Billetes" Type="varchar" MaxLength="50" />
+    <Property Name="MarcaAceptador_Billetes" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Aceptadores_Monedas">
+    <Key>
+      <PropertyRef Name="IdAceptador_Monedas" />
+    </Key>
+    <Property Name="IdAceptador_Monedas" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ModeloAceptador_Monedas" Type="varchar" MaxLength="50" />
+    <Property Name="NombreAceptador_Monedas" Type="varchar" MaxLength="50" />
+    <Property Name="NSAceptador_Monedas" Type="varchar" MaxLength="50" />
+    <Property Name="StatusAceptador_Monedas" Type="varchar" MaxLength="50" />
+    <Property Name="ErrorAceptador_Monedas" Type="varchar" MaxLength="50" />
+    <Property Name="MarcaAceptador_Monedas" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="AspNetRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaims">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ClaimType" Type="nvarchar(max)" />
+    <Property Name="ClaimValue" Type="nvarchar(max)" />
+    <Property Name="User_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogins">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+    </Key>
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserRoles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Hometown" Type="nvarchar(max)" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+    <Property Name="PasswordHash" Type="nvarchar(max)" />
+    <Property Name="SecurityStamp" Type="nvarchar(max)" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" />
+    <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="datetime" />
+    <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Cajeros">
+    <Key>
+      <PropertyRef Name="IdCajero" />
+    </Key>
+    <Property Name="ColorCajero" Type="varchar" MaxLength="50" />
+    <Property Name="FechaEntregaCajero" Type="date" />
+    <Property Name="FechaSalidaCajero" Type="date" />
+    <Property Name="FechaEnsambladoCajero" Type="date" />
+    <Property Name="IdCajero" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NSCajero" Type="varchar" MaxLength="50" />
+    <Property Name="NombreCajero" Type="varchar" MaxLength="50" />
+    <Property Name="NombreEnsamblador" Type="varchar" MaxLength="50" />
+    <Property Name="UbicacionCajero" Type="varchar" MaxLength="50" />
+    <Property Name="ErrorCajero" Type="varchar" MaxLength="50" />
+    <Property Name="IdAceptador_Billete" Type="int" />
+    <Property Name="IdDispensador" Type="int" />
+    <Property Name="IdCliente" Type="int" />
+    <Property Name="IdPC" Type="int" />
+    <Property Name="IdImpresora" Type="int" />
+    <Property Name="IdAceptador_Moneda" Type="int" />
+    <Property Name="IdTarjeta" Type="int" />
+    <Property Name="IdUPS" Type="int" />
+    <Property Name="IdScanner" Type="int" />
+    <Property Name="IdMonitor" Type="int" />
+    <Property Name="IdSucursal" Type="int" />
+    <Property Name="StatusCajero" Type="varchar" MaxLength="50" />
+    <Property Name="ModeloCajero" Type="varchar" MaxLength="50" />
+    <Property Name="TipoCajero" Type="varchar" MaxLength="50" />
+    <Property Name="IdToneleroA" Type="int" />
+    <Property Name="IdToneleroB" Type="int" />
+  </EntityType>
+  <EntityType Name="Clientes">
+    <Key>
+      <PropertyRef Name="IdCliente" />
+    </Key>
+    <Property Name="IdCliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PasswordCliente" Type="varchar" MaxLength="50" />
+    <Property Name="UsernameCliente" Type="varchar" MaxLength="50" />
+    <Property Name="LicenciaStatus" Type="varchar" MaxLength="50" />
+    <Property Name="NombreCliente" Type="varchar" MaxLength="50" />
+    <Property Name="TipoCliente" Type="varchar" MaxLength="50" />
+    <Property Name="IdAspNetUsers" Type="nvarchar" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="Dispensadores">
+    <Key>
+      <PropertyRef Name="IdDispensador" />
+    </Key>
+    <Property Name="IdDispensador" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EfectivoActualDispensador" Type="int" />
+    <Property Name="EfectivoDispensadoDispensador" Type="int" />
+    <Property Name="EfectivoInicialDispensador" Type="int" />
+    <Property Name="ModeloDispensador" Type="varchar" MaxLength="50" />
+    <Property Name="NSDispensador" Type="varchar" MaxLength="50" />
+    <Property Name="StatusDispensador" Type="varchar" MaxLength="50" />
+    <Property Name="TipoBillete" Type="varchar" MaxLength="50" />
+    <Property Name="ErrorDispensador" Type="varchar" MaxLength="50" />
+    <Property Name="MarcaDispensador" Type="varchar" MaxLength="50" />
+    <Property Name="NombreDispensador" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Impresoras">
+    <Key>
+      <PropertyRef Name="IdImpresora" />
+    </Key>
+    <Property Name="IdImpresora" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NSImpresora" Type="varchar" MaxLength="50" />
+    <Property Name="NombreImpresora" Type="varchar" MaxLength="50" />
+    <Property Name="ModeloImpresora" Type="varchar" MaxLength="50" />
+    <Property Name="StatusImpresora" Type="varchar" MaxLength="50" />
+    <Property Name="PapelImpresora" Type="bit" />
+    <Property Name="ErrorImpresora" Type="varchar" MaxLength="50" />
+    <Property Name="MarcaImpresora" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Monitores">
+    <Key>
+      <PropertyRef Name="IdMonitor" />
+    </Key>
+    <Property Name="IdMonitor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MarcaMonitor" Type="varchar" MaxLength="50" />
+    <Property Name="ModeloMonitor" Type="varchar" MaxLength="50" />
+    <Property Name="NombreMonitor" Type="varchar" MaxLength="50" />
+    <Property Name="NSMonitor" Type="varchar" MaxLength="50" />
+    <Property Name="StatusMonitor" Type="varchar" MaxLength="50" />
+    <Property Name="ErrorMonitor" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PCes">
+    <Key>
+      <PropertyRef Name="IdPC" />
+    </Key>
+    <Property Name="IdPC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MarcaPC" Type="varchar" MaxLength="50" />
+    <Property Name="ModeloPC" Type="varchar" MaxLength="50" />
+    <Property Name="NombrePC" Type="varchar" MaxLength="50" />
+    <Property Name="NSPC" Type="varchar" MaxLength="50" />
+    <Property Name="OSPC" Type="varchar" MaxLength="50" />
+    <Property Name="StatusPC" Type="varchar" MaxLength="50" />
+    <Property Name="ErrorPC" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Reportes">
+    <Key>
+      <PropertyRef Name="IdReporte" />
+    </Key>
+    <Property Name="IdReporte" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FechaReporte" Type="date" />
+    <Property Name="CorrectivoReporte" Type="text" />
+    <Property Name="PreventivoReporte" Type="text" />
+    <Property Name="TecnicoReporte" Type="varchar" MaxLength="50" />
+    <Property Name="NombreReporte" Type="varchar" MaxLength="50" />
+    <Property Name="NSReporte" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ReportesXCajero">
+    <Key>
+      <PropertyRef Name="IdReporteXCajero" />
+    </Key>
+    <Property Name="IdReporte" Type="int" />
+    <Property Name="IdCajero" Type="int" />
+    <Property Name="IdReporteXCajero" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Scanners">
+    <Key>
+      <PropertyRef Name="IdScanner" />
+    </Key>
+    <Property Name="IdScanner" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MarcaScanner" Type="varchar" MaxLength="50" />
+    <Property Name="MoneloScanner" Type="varchar" MaxLength="50" />
+    <Property Name="NombreScanner" Type="varchar" MaxLength="50" />
+    <Property Name="NSScanner" Type="varchar" MaxLength="50" />
+    <Property Name="StatusScanner" Type="varchar" MaxLength="50" />
+    <Property Name="ErrorScanner" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Sucursales">
+    <Key>
+      <PropertyRef Name="IdSucursal" />
+    </Key>
+    <Property Name="IdSucursal" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SupervisorCajero" Type="varchar" MaxLength="50" />
+    <Property Name="EmpresaSucursal" Type="varchar" MaxLength="50" />
+    <Property Name="TelefonoSucursal" Type="int" />
+    <Property Name="GerenteSucursal" Type="varchar" MaxLength="50" />
+    <Property Name="DireccionSucursal" Type="varchar" MaxLength="50" />
+    <Property Name="NombreSucursal" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Tarjetas">
+    <Key>
+      <PropertyRef Name="IdTarjeta" />
+    </Key>
+    <Property Name="IdTarjeta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ModeloTarjeta" Type="varchar" MaxLength="50" />
+    <Property Name="NSTarjeta" Type="varchar" MaxLength="50" />
+    <Property Name="StatusTarjeta" Type="varchar" MaxLength="50" />
+    <Property Name="ErrorTarjeta" Type="varchar" MaxLength="50" />
+    <Property Name="MarcaTarjeta" Type="varchar" MaxLength="50" />
+    <Property Name="NombreTarjeta" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Toneleros">
+    <Key>
+      <PropertyRef Name="IdTonelero" />
+    </Key>
+    <Property Name="IdTonelero" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NombreTonelero" Type="varchar" MaxLength="50" />
+    <Property Name="ModeloTonelero" Type="varchar" MaxLength="50" />
+    <Property Name="NSTonelero" Type="varchar" MaxLength="50" />
+    <Property Name="StatusTonelero" Type="varchar" MaxLength="50" />
+    <Property Name="TipoMoneda" Type="varchar" MaxLength="50" />
+    <Property Name="EfectivoActualTonelero" Type="int" />
+    <Property Name="EfectivoDispensadoTonelero" Type="int" />
+    <Property Name="EfectivoInicialTonelero" Type="int" />
+    <Property Name="ErrorTonelero" Type="varchar" MaxLength="50" />
+    <Property Name="MarcaTonelero" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="UPSes">
+    <Key>
+      <PropertyRef Name="IdUPS" />
+    </Key>
+    <Property Name="IdUPS" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MarcaUPS" Type="varchar" MaxLength="50" />
+    <Property Name="ModeloUPS" Type="varchar" MaxLength="50" />
+    <Property Name="NombreUPS" Type="varchar" MaxLength="50" />
+    <Property Name="NSUPS" Type="varchar" MaxLength="50" />
+    <Property Name="StatusUPS" Type="varchar" MaxLength="50" />
+    <Property Name="ErrorUPS" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_Cajeros_Aceptadores_Billetes">
+    <End Role="Aceptadores_Billetes" Type="Self.Aceptadores_Billetes" Multiplicity="0..1" />
+    <End Role="Cajeros" Type="Self.Cajeros" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Aceptadores_Billetes">
+        <PropertyRef Name="IdAceptador_Billetes" />
+      </Principal>
+      <Dependent Role="Cajeros">
+        <PropertyRef Name="IdAceptador_Billete" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cajeros_Aceptadores_Monedas">
+    <End Role="Aceptadores_Monedas" Type="Self.Aceptadores_Monedas" Multiplicity="0..1" />
+    <End Role="Cajeros" Type="Self.Cajeros" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Aceptadores_Monedas">
+        <PropertyRef Name="IdAceptador_Monedas" />
+      </Principal>
+      <Dependent Role="Cajeros">
+        <PropertyRef Name="IdAceptador_Moneda" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cajeros_Clientes">
+    <End Role="Clientes" Type="Self.Clientes" Multiplicity="0..1" />
+    <End Role="Cajeros" Type="Self.Cajeros" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clientes">
+        <PropertyRef Name="IdCliente" />
+      </Principal>
+      <Dependent Role="Cajeros">
+        <PropertyRef Name="IdCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cajeros_Dispensadores">
+    <End Role="Dispensadores" Type="Self.Dispensadores" Multiplicity="0..1" />
+    <End Role="Cajeros" Type="Self.Cajeros" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dispensadores">
+        <PropertyRef Name="IdDispensador" />
+      </Principal>
+      <Dependent Role="Cajeros">
+        <PropertyRef Name="IdDispensador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cajeros_Impresoras">
+    <End Role="Impresoras" Type="Self.Impresoras" Multiplicity="0..1" />
+    <End Role="Cajeros" Type="Self.Cajeros" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Impresoras">
+        <PropertyRef Name="IdImpresora" />
+      </Principal>
+      <Dependent Role="Cajeros">
+        <PropertyRef Name="IdImpresora" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cajeros_Monitores">
+    <End Role="Monitores" Type="Self.Monitores" Multiplicity="0..1" />
+    <End Role="Cajeros" Type="Self.Cajeros" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Monitores">
+        <PropertyRef Name="IdMonitor" />
+      </Principal>
+      <Dependent Role="Cajeros">
+        <PropertyRef Name="IdMonitor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cajeros_PCes">
+    <End Role="PCes" Type="Self.PCes" Multiplicity="0..1" />
+    <End Role="Cajeros" Type="Self.Cajeros" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PCes">
+        <PropertyRef Name="IdPC" />
+      </Principal>
+      <Dependent Role="Cajeros">
+        <PropertyRef Name="IdPC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cajeros_Scanners">
+    <End Role="Scanners" Type="Self.Scanners" Multiplicity="0..1" />
+    <End Role="Cajeros" Type="Self.Cajeros" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Scanners">
+        <PropertyRef Name="IdScanner" />
+      </Principal>
+      <Dependent Role="Cajeros">
+        <PropertyRef Name="IdScanner" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cajeros_Sucursales">
+    <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
+    <End Role="Cajeros" Type="Self.Cajeros" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sucursales">
+        <PropertyRef Name="IdSucursal" />
+      </Principal>
+      <Dependent Role="Cajeros">
+        <PropertyRef Name="IdSucursal" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cajeros_Tarjetas">
+    <End Role="Tarjetas" Type="Self.Tarjetas" Multiplicity="0..1" />
+    <End Role="Cajeros" Type="Self.Cajeros" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tarjetas">
+        <PropertyRef Name="IdTarjeta" />
+      </Principal>
+      <Dependent Role="Cajeros">
+        <PropertyRef Name="IdTarjeta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cajeros_TonelerosA">
+    <End Role="Toneleros" Type="Self.Toneleros" Multiplicity="0..1" />
+    <End Role="Cajeros" Type="Self.Cajeros" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Toneleros">
+        <PropertyRef Name="IdTonelero" />
+      </Principal>
+      <Dependent Role="Cajeros">
+        <PropertyRef Name="IdToneleroA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cajeros_TonelerosB">
+    <End Role="Toneleros" Type="Self.Toneleros" Multiplicity="0..1" />
+    <End Role="Cajeros" Type="Self.Cajeros" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Toneleros">
+        <PropertyRef Name="IdTonelero" />
+      </Principal>
+      <Dependent Role="Cajeros">
+        <PropertyRef Name="IdToneleroB" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cajeros_UPSes">
+    <End Role="UPSes" Type="Self.UPSes" Multiplicity="0..1" />
+    <End Role="Cajeros" Type="Self.Cajeros" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UPSes">
+        <PropertyRef Name="IdUPS" />
+      </Principal>
+      <Dependent Role="Cajeros">
+        <PropertyRef Name="IdUPS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Clientes_AspNetUsers">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
+    <End Role="Clientes" Type="Self.Clientes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Clientes">
+        <PropertyRef Name="IdAspNetUsers" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_User_Id">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaims">
+        <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+    <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetRoles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ReportesXCajero_Cajeros">
+    <End Role="Cajeros" Type="Self.Cajeros" Multiplicity="0..1" />
+    <End Role="ReportesXCajero" Type="Self.ReportesXCajero" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cajeros">
+        <PropertyRef Name="IdCajero" />
+      </Principal>
+      <Dependent Role="ReportesXCajero">
+        <PropertyRef Name="IdCajero" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ReportesXCajero_Reportes">
+    <End Role="Reportes" Type="Self.Reportes" Multiplicity="0..1" />
+    <End Role="ReportesXCajero" Type="Self.ReportesXCajero" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Reportes">
+        <PropertyRef Name="IdReporte" />
+      </Principal>
+      <Dependent Role="ReportesXCajero">
+        <PropertyRef Name="IdReporte" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="EMMTY_GO_ModelStoreContainer">
+    <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Aceptadores_Billetes" EntityType="Self.Aceptadores_Billetes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Aceptadores_Monedas" EntityType="Self.Aceptadores_Monedas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cajeros" EntityType="Self.Cajeros" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Clientes" EntityType="Self.Clientes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Dispensadores" EntityType="Self.Dispensadores" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Impresoras" EntityType="Self.Impresoras" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Monitores" EntityType="Self.Monitores" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PCes" EntityType="Self.PCes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Reportes" EntityType="Self.Reportes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ReportesXCajero" EntityType="Self.ReportesXCajero" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Scanners" EntityType="Self.Scanners" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sucursales" EntityType="Self.Sucursales" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tarjetas" EntityType="Self.Tarjetas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Toneleros" EntityType="Self.Toneleros" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UPSes" EntityType="Self.UPSes" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Cajeros_Aceptadores_Billetes" Association="Self.FK_Cajeros_Aceptadores_Billetes">
+      <End Role="Aceptadores_Billetes" EntitySet="Aceptadores_Billetes" />
+      <End Role="Cajeros" EntitySet="Cajeros" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cajeros_Aceptadores_Monedas" Association="Self.FK_Cajeros_Aceptadores_Monedas">
+      <End Role="Aceptadores_Monedas" EntitySet="Aceptadores_Monedas" />
+      <End Role="Cajeros" EntitySet="Cajeros" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cajeros_Clientes" Association="Self.FK_Cajeros_Clientes">
+      <End Role="Clientes" EntitySet="Clientes" />
+      <End Role="Cajeros" EntitySet="Cajeros" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cajeros_Dispensadores" Association="Self.FK_Cajeros_Dispensadores">
+      <End Role="Dispensadores" EntitySet="Dispensadores" />
+      <End Role="Cajeros" EntitySet="Cajeros" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cajeros_Impresoras" Association="Self.FK_Cajeros_Impresoras">
+      <End Role="Impresoras" EntitySet="Impresoras" />
+      <End Role="Cajeros" EntitySet="Cajeros" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cajeros_Monitores" Association="Self.FK_Cajeros_Monitores">
+      <End Role="Monitores" EntitySet="Monitores" />
+      <End Role="Cajeros" EntitySet="Cajeros" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cajeros_PCes" Association="Self.FK_Cajeros_PCes">
+      <End Role="PCes" EntitySet="PCes" />
+      <End Role="Cajeros" EntitySet="Cajeros" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cajeros_Scanners" Association="Self.FK_Cajeros_Scanners">
+      <End Role="Scanners" EntitySet="Scanners" />
+      <End Role="Cajeros" EntitySet="Cajeros" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cajeros_Sucursales" Association="Self.FK_Cajeros_Sucursales">
+      <End Role="Sucursales" EntitySet="Sucursales" />
+      <End Role="Cajeros" EntitySet="Cajeros" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cajeros_Tarjetas" Association="Self.FK_Cajeros_Tarjetas">
+      <End Role="Tarjetas" EntitySet="Tarjetas" />
+      <End Role="Cajeros" EntitySet="Cajeros" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cajeros_TonelerosA" Association="Self.FK_Cajeros_TonelerosA">
+      <End Role="Toneleros" EntitySet="Toneleros" />
+      <End Role="Cajeros" EntitySet="Cajeros" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cajeros_TonelerosB" Association="Self.FK_Cajeros_TonelerosB">
+      <End Role="Toneleros" EntitySet="Toneleros" />
+      <End Role="Cajeros" EntitySet="Cajeros" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cajeros_UPSes" Association="Self.FK_Cajeros_UPSes">
+      <End Role="UPSes" EntitySet="UPSes" />
+      <End Role="Cajeros" EntitySet="Cajeros" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Clientes_AspNetUsers" Association="Self.FK_Clientes_AspNetUsers">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="Clientes" EntitySet="Clientes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_User_Id" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_User_Id">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ReportesXCajero_Cajeros" Association="Self.FK_ReportesXCajero_Cajeros">
+      <End Role="Cajeros" EntitySet="Cajeros" />
+      <End Role="ReportesXCajero" EntitySet="ReportesXCajero" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ReportesXCajero_Reportes" Association="Self.FK_ReportesXCajero_Reportes">
+      <End Role="Reportes" EntitySet="Reportes" />
+      <End Role="ReportesXCajero" EntitySet="ReportesXCajero" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

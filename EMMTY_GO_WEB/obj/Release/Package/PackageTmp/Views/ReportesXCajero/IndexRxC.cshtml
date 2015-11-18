@@ -1,0 +1,40 @@
+﻿@model IEnumerable<EMMTY_GO_WEB.Models.ReportesCajero>
+
+@{
+    ViewBag.Title = "IndexRxC";
+}
+
+<h2>Reportes del cajero: @Html.DisplayName(Model.First().Cajeros.NSCajero)</h2>
+
+<p>
+    @Html.ActionLink("Crear nuevo reporte", "CreateRxC", "ReportesXCajero", new { id = Model.First().IdCajero, ns = Model.First().Cajeros.NSCajero }, new { }) |
+    @Html.ActionLink("Asignar un reporte existente", "Create", "ReportesXCajero", new { id = Model.First().IdCajero, ns = Model.First().Cajeros.NSCajero }, new { })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Reportes.NSReporte)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Reportes.FechaReporte)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Reportes.NSReporte)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Reportes.FechaReporte)
+        </td>
+        <td> 
+            @Html.ActionLink("Edit", "EditRxC", new { id = item.Reportes.IdReporte, IdCajero = item.IdCajero }) |
+            @Html.ActionLink("Details", "DetailsRxC", new { id = item.Reportes.IdReporte, IdCajero = item.IdCajero }) |
+            @Html.ActionLink("Delete", "DeleteRxC", new { id = item.Reportes.IdReporte, idReporteXCajero = item.IdReporteCajero, IdCajero = item.IdCajero })
+        </td>
+    </tr>
+}
+
+</table>

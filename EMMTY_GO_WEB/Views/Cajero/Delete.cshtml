@@ -1,0 +1,52 @@
+﻿@model EMMTY_GO_WEB.Models.Cajero
+
+@{
+    ViewBag.Title = "Eliminar";
+}
+<h3>Seguro deceas eliminar el Cajero?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            NS Cajero
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NSCajero)
+        </dd>
+
+        <dt>
+            Nombre Cajero
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreCajero)
+        </dd>
+
+        <dt>
+            Modelo Cajero
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModeloCajero)
+        </dd>
+
+        <dt>
+            Tipo Cajero
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoCajero)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink("Regresar a la lista", "Index")
+        </div>
+    }
+</div>

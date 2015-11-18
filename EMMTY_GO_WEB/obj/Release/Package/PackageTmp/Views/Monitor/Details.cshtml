@@ -1,0 +1,56 @@
+﻿@model EMMTY_GO_WEB.Models.Monitor
+
+@{
+    ViewBag.Title = "Informacion";
+}
+
+<h2>Informacion del Monitor</h2>
+
+<div>
+	<hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            Modelo
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModeloMonitor)
+        </dd>
+
+        <dt>
+            Nombre
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreMonitor)
+        </dd>
+        <dt>
+            Marca
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MarcaMonitor)
+        </dd>
+
+        <dt>
+            Numero de Serie
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NSMonitor)
+        </dd>
+    </dl>
+</div>
+
+<p>
+    @if (User.IsInRole("Admin"))
+    {
+        @Html.ActionLink("Editar", "Edit", new { id = Model.IdMonitor }); @:|
+        @Html.ActionLink("Regresar a la lista", "Index"); @:|
+    }
+    @if (Model.Cajeros.Count > 0)
+    {
+        @Html.ActionLink("Regresar al cajero", "Details", "Cajero", new { id = Model.Cajeros.First().IdCajero }, new { })
+    }
+</p>

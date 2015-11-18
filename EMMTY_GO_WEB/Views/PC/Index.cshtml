@@ -1,0 +1,40 @@
+﻿@using GridMvc.Html
+@model IEnumerable<EMMTY_GO_WEB.Models.PC>
+
+@{
+    ViewBag.Title = "PCes";
+}
+<h2>Listado de PCes</h2>
+
+@if (User.IsInRole("Admin"))
+{
+    <p>
+        @Html.ActionLink("Registrar nueva PC", "Create")
+    </p>
+}
+<div id="ListTableId" class="table-responsive">
+    @Html.Grid(Model).Columns(columns =>
+    {
+        columns.Add(c => c.NSPC).Titled(Html.DisplayNameFor(c => c.NSPC).ToHtmlString()).Filterable(true).Sanitized(false);
+        columns.Add(c => c.NombrePC).Titled(Html.DisplayNameFor(c => c.NombrePC).ToHtmlString());
+        columns.Add(c => c.MarcaPC).Titled(Html.DisplayNameFor(c => c.MarcaPC).ToHtmlString());
+        columns.Add(c => c.ModeloPC).Titled(Html.DisplayNameFor(c => c.ModeloPC).ToHtmlString());
+        columns.Add().Sanitized(false).Encoded(false).RenderValueAs(
+            o =>
+            {
+                var added = "";
+                if (User.IsInRole("Admin"))
+                    added = Html.ActionLink("Editar", "Edit", new {id = o.IdPC}).ToHtmlString();
+                added += " | " + @Html.ActionLink("Info", "Details", new {id = o.IdPC});
+                return added + (" | " + Html.ActionLink("Eliminar", "Delete", new {id = o.IdPC}).ToHtmlString());
+            });
+    }).WithPaging(10).Sortable(true)
+</div>
+@section scripts
+{
+    <script>
+        $(document).ready(function() {
+            $("#ListTableId table:first").addClass("table-condensed");
+        });
+    </script>
+}

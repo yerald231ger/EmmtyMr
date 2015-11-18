@@ -1,0 +1,66 @@
+﻿@model EMMTY_GO_WEB.Models.Sucursal
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Sucursal</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SupervisorCajero)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SupervisorCajero)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmpresaSucursal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmpresaSucursal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TelefonoSucursal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TelefonoSucursal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GerenteSucursal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GerenteSucursal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DireccionSucursal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DireccionSucursal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreSucursal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreSucursal)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdSucursal }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

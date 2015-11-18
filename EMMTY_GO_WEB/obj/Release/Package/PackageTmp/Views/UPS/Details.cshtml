@@ -1,0 +1,50 @@
+﻿@model EMMTY_GO_WEB.Models.UPS
+
+@{
+    ViewBag.Title = "Informacion";
+}
+
+<h2>Informacion del UPS</h2>
+
+<div>
+	<hr />
+    <dl class="dl-horizontal">
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NSUPS)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NSUPS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreUPS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreUPS)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MarcaUPS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MarcaUPS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModeloUPS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModeloUPS)
+        </dd>
+        
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.IdUPS }) |
+    @Html.ActionLink("Regresar a la lista", "Index")
+</p>

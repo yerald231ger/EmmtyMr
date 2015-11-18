@@ -1,0 +1,155 @@
+﻿@section scripts
+{
+    <script type="text/javascript">
+        var Impresora = {
+            IdImpresora: 0,
+            NSImpresora: null,
+            NombreImpresora: null,
+            ModeloImpresora: null,
+            StatusImpresora: null,
+            PapelImpresora: null,
+            ErrorImpresora: null,
+            MarcaImpresora: null,
+            Cajeros: null
+        };
+        var UpdateCashLevels = setInterval(function () { Refresh() }, 2500);
+
+        var id00 = "error-panel";
+        var id01 = "ErrorImpresora";
+        var id02 = "StatusImpresora";
+        var id03 = "PapelImpresora";
+
+        var alertInfo = "class='alert alert-info'";
+        var alertDanger = "class='alert alert-danger'";
+        var alertSuccess = "class='alert alert-success'";
+        var alertWarning = "class='alert alert-warning'";
+
+        var collapsed = false;
+
+        function Refresh() {
+            $.getJSON("@Url.Action("GetInfo")", { idImpresora: "@Model.IdImpresora" }, function(data) {
+
+                Impresora = $.parseJSON(data);
+
+                $("#" + id01).replaceWith("<div id=" + id01 + " " + alertInfo + "><strong>" + Impresora.ErrorImpresora + "</strong></div>");
+                $("#" + id02).replaceWith("<div id=" + id02 + " " + (Impresora.StatusImpresora ? alertDanger : alertSuccess) + ")'><strong>" + (Impresora.StatusImpresora ? Impresora.ErrorImpresora : "Okey") + "</strong></div>");
+                $("#" + id03).replaceWith("<div id=" + id03 + " " + (!Impresora.PapelImpresora ? alertWarning : alertSuccess) + ")'><strong>" + (!Impresora.PapelImpresora ? "Papel Bajo" : "Okey") + "</strong></div>");
+
+                if (!collapsed && Impresora.StatusImpresora) {
+                    $("#" + id00).collapse("toggle");
+                    collapsed = true;
+                }
+
+                if (collapsed && !Impresora.StatusImpresora) {
+                    $("#" + id00).collapse("toggle");
+                    collapsed = false;
+                }
+            });
+        }
+
+    </script>
+}
+@model EMMTY_GO_WEB.Models.Impresora
+
+@{
+    ViewBag.Title = "Monitoreo";
+}
+
+<h2>Monitoreo @Html.DisplayFor(model => model.NombreImpresora)</h2>
+
+<div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-primary">
+
+                <div class="panel-heading">@Html.DisplayNameFor(model => model.NSImpresora): @Html.DisplayFor(model => model.NSImpresora)</div>
+                <div class="panel-body">
+                    Descripcion del componente
+                </div>
+                <table class="table">
+                    <tr>
+                        <th></th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.NombreImpresora)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ModeloImpresora)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.MarcaImpresora)
+                        </th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            @Html.DisplayFor(model => model.NombreImpresora)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.ModeloImpresora)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.MarcaImpresora)
+                        </td>
+                    </tr>
+                </table>
+                <div class="panel-body">
+                    Estado del Componente
+                </div>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1">
+                        <div class="row">
+                            <div class="col-md-4 col-xs-4">
+                                <h5>
+                                    @Html.DisplayNameFor(model => model.StatusImpresora)
+                                </h5>
+                                <div id="StatusImpresora" class="@(Model.StatusImpresora ? "alert alert-danger" : "alert alert-success")">
+                                    <strong>@(Model.StatusImpresora ? "Error" : "Okey")</strong>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-xs-4">
+                                <h5>
+                                    @Html.DisplayNameFor(model => model.ErrorImpresora)
+                                </h5>
+                                <div id="ErrorImpresora" class="alert alert-info">
+                                    <strong>@Html.DisplayFor(model => model.ErrorImpresora)</strong>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-xs-4">
+                                <h5>
+                                    @Html.DisplayNameFor(model => model.PapelImpresora)
+                                </h5>
+                                <div id="PapelImpresora" class="@(!Model.PapelImpresora ? "alert alert-warning" : "alert alert-success")">
+                                    <strong>@(!Model.PapelImpresora ? "Papel Bajo" : "Okey")</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-info collapse" id="error-panel">
+                <div class="panel-heading">
+                    Descripcion del Error
+                </div>
+                <div class="panel-body" id="error-panel-body">
+                    ...
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<p>
+    @if (User.IsInRole("Admin"))
+    {
+        @Html.ActionLink("Editar", "Edit", new { id = Model.IdImpresora })
+        @:|
+        @Html.ActionLink("Regresar a la lista", "Index")
+        @:|
+    }
+    @if (Model.Cajeros.Count > 0)
+    {
+        @Html.ActionLink("Regresar al cajero", "Details", "Cajero", new { id = Model.Cajeros.First().IdCajero }, new { })
+    }
+</p>

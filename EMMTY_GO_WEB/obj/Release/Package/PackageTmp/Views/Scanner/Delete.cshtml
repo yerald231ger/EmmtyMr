@@ -1,0 +1,54 @@
+﻿@model EMMTY_GO_WEB.Models.Scanner
+
+@{
+    ViewBag.Title = "Eliminar";
+}
+
+<h3>Seguro deceas borrar este Scanner?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NSScanner)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NSScanner)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreScanner)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreScanner)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MarcaScanner)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MarcaScanner)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModeloScanner)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModeloScanner)
+        </dd>
+
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink("Regresar a la lista", "Index")
+        </div>
+    }
+</div>

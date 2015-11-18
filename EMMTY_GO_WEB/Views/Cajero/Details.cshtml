@@ -1,0 +1,1220 @@
+﻿@model EMMTY_GO_WEB.Models.Cajero
+@{
+    ViewBag.Title = "Details";
+}
+@section scripts {
+    <script src="~/Scripts/jquery.signalR-2.2.0.min.js"></script>
+    <script src="~/signalr/hubs"></script>
+    <script type="text/javascript">
+
+        var Cajero = {
+            ColorCajero: null,
+            FechaEntregaCajero: null,
+            FechaSalidaCajero: null,
+            FechaEnsambladoCajero: null,
+            IdCajero: 1,
+            NSCajero: null,
+            NombreCajero: null,
+            NombreEnsamblador: null,
+            UbicacionCajero: null,
+            ErrorCajero: null,
+            IdAceptador_Billetes: null,
+            IdDispensador: null,
+            IdCliente: null,
+            IdPC: null,
+            IdImpresora: null,
+            IdAceptador_Monedas: null,
+            IdTarjeta: null,
+            IdUPS: null,
+            IdScanner: null,
+            IdMonitor: null,
+            IdSucursal: null,
+            StatusCajero: "HopperJam",
+            ModeloCajero: null,
+            TipoCajero: null,
+            IdToneleroA: null,
+            IdToneleroB: null,
+            EfectivoActual: 3000,
+            EfectivoDispensado: 5000,
+            EfectivoInicial: 5000,
+            NivelBajoEfectivo: 5000,
+            LastRowUpdate: null,
+            Aceptador_Billetes: {
+                IdAceptador_Billetes: null,
+                ModeloAceptador_Billetes: null,
+                NombreAceptador_Billetes: null,
+                NSAceptador_Billetes: null,
+                StatusAceptador_Billetes: "Working",
+                ErrorAceptador_Billetes: "NoError",
+                MarcaAceptador_Billetes: null,
+                Cajeros: null
+            },
+            Aceptador_Monedas: {
+                IdAceptador_Monedas: 0,
+                ModeloAceptador_Monedas: null,
+                NombreAceptador_Monedas: null,
+                NSAceptador_Monedas: null,
+                StatusAceptador_Monedas: "Unknow",
+                ErrorAceptador_Monedas: "NoError",
+                MarcaAceptador_Monedas: null,
+                Cajeros: null
+            },
+            Cliente: null,
+            Dispensador: {
+                IdDispensador: null,
+                EfectivoActualDispensador: null,
+                EfectivoDispensadoDispensador: null,
+                EfectivoInicialDispensador: null,
+                ModeloDispensador: null,
+                NSDispensador: null,
+                StatusDispensador: "Working",
+                TipoBillete: null,
+                ErrorDispensador: "NoError",
+                MarcaDispensador: null,
+                NombreDispensador: null,
+                Cajeros: null
+            },
+            Impresora: {
+                IdImpresora: 0,
+                NSImpresora: null,
+                NombreImpresora: null,
+                ModeloImpresora: null,
+                StatusImpresora: "Working",
+                PapelImpresora: null,
+                ErrorImpresora: "NoError",
+                MarcaImpresora: null,
+                Cajeros: null
+            },
+            Monitor: {
+                IdMonitor: 0,
+                MarcaMonitor: null,
+                ModeloMonitor: null,
+                NombreMonitor: null,
+                NSMonitor: null,
+                StatusMonitor: "Working",
+                ErrorMonitor: "NoError",
+                Cajeros: null
+            },
+            PC: null,
+            Scanner: {
+                IdScanner: 0,
+                MarcaScanner: null,
+                MoneloScanner: null,
+                NombreScanner: null,
+                NSScanner: null,
+                StatusScanner: "Working",
+                ErrorScanner: "NoError",
+                Cajeros: null
+            },
+            Sucursal: null,
+            Tarjeta: {
+                IdTarjeta: 0,
+                ModeloTarjeta: null,
+                NSTarjeta: null,
+                StatusTarjeta: "Wokring",
+                ErrorTarjeta: "NoError",
+                MarcaTarjeta: null,
+                NombreTarjeta: null,
+                Cajeros: null
+            },
+            ToneleroA: {
+                IdTonelero: null,
+                NombreTonelero: null,
+                ModeloTonelero: null,
+                STonelero: null,
+                StatusTonelero: null,
+                TipoMoneda: null,
+                EfectivoActualTonelero: null,
+                EfectivoDispensadoTonelero: null,
+                EfectivoInicialTonelero: null,
+                ErrorTonelero: null,
+                arcaTonelero: null,
+                Cajeros: null,
+                Cajeros1: null
+            },
+            ToneleroB: {
+                IdTonelero: null,
+                NombreTonelero: null,
+                ModeloTonelero: null,
+                NSTonelero: null,
+                StatusTonelero: null,
+                TipoMoneda: null,
+                EfectivoActualTonelero: null,
+                EfectivoDispensadoTonelero: null,
+                EfectivoInicialTonelero: null,
+                ErrorTonelero: null,
+                MarcaTonelero: null,
+                Cajeros: null,
+                Cajeros1: null
+            },
+            UPS: null,
+            ReportesXCajero: null
+        }
+
+        var PanelAceptador_Billetes = $("#PanelAceptador_Billetes");
+        var PanelAceptador_Monedas = $("#PanelAceptador_Monedas");
+        var PanelDispensador = $("#PanelDispensador");
+        var PanelImpresora = $("#PanelImpresora");
+        var PanelMonitor = $("#PanelMonitor");
+        var PanelScanner = $("#PanelScanner");
+        var PanelTarjeta = $("#PanelTarjeta");
+        var PanelToneleroA = $("#PanelToneleroA");
+        var PanelToneleroB = $("#PanelToneleroB");
+
+        var id01 = "ErrorCajero";
+        var id02 = "StatusCajero";
+        var id12 = "EfectivoActual";
+        var id13 = "EfectivoDispensado";
+        var id14 = "EfectivoInicial";
+
+        var IdErrorAceptador_Billetes = "ErrorAceptador_Billetes";
+        var IdStatusAceptador_Billetes = "StatusAceptador_Billetes";
+
+        var IdErrorAceptador_Monedas = "ErrorAceptador_Monedas";
+        var IdStatusAceptador_Monedas = "StatusAceptador_Monedas";
+
+        var IdErrorDispensador = "ErrorDispensador";
+        var IdStatusDispensador = "StatusDispensador";
+
+        var IdStatusImpresora = "StatusImpresora";
+        var IdErrorImpresora = "ErrorImpresora";
+        var IdPapelImpresora = "PapelImpresora";
+
+        var IdErrorScanner = "ErrorScanner";
+        var IdStatusScanner = "StatusScanner";
+
+        var IdErrorTarjeta = "ErrorTarjeta";
+        var IdStatusTarjeta = "StatusTarjeta";
+
+        var IdErrorToneleroA = "ErrorToneleroA";
+        var IdStatusToneleroA = "StatusToneleroA";
+
+        var IdErrorToneleroB = "ErrorToneleroB";
+        var IdStatusToneleroB = "StatusToneleroB";
+
+        var alertInfo = "class='alert alert-info'";
+        var alertDanger = "class='alert alert-danger'";
+        var alertSuccess = "class='alert alert-success'";
+        var alertWarning = "class='alert alert-warning'";
+
+
+        var pbInitial = $("#pbInitial");
+        var pbDispensed = $("#pdDispensed");
+        var pbUpdate = $("#pdUpdate");
+
+        $(function() {
+
+            var proxy = $.connection.atmMonitorHub;
+
+            proxy.client.AtmData = function(jsonData) {
+
+                Cajero = $.parseJSON(jsonData);
+
+                $("#" + IdErrorToneleroB).replaceWith("<div id=" + IdErrorToneleroB + " " + alertInfo + "><strong>" + Cajero.ToneleroB.ErrorTonelero.substring(0, 12) + "</strong></div>");
+                $("#" + IdStatusToneleroB).replaceWith("<div id=" + IdStatusToneleroB + " " + (Cajero.ToneleroB.StatusTonelero ? alertDanger : alertSuccess) + ")'><strong>" + (Cajero.ToneleroB.StatusTonelero ? "Error" : "Okey") + "</strong></div>");
+
+                $("#" + IdErrorToneleroA).replaceWith("<div id=" + IdErrorToneleroA + " " + alertInfo + "><strong>" + Cajero.ToneleroA.ErrorTonelero.substring(0, 12) + "</strong></div>");
+                $("#" + IdStatusToneleroA).replaceWith("<div id=" + IdStatusToneleroA + " " + (Cajero.ToneleroA.StatusTonelero ? alertDanger : alertSuccess) + ")'><strong>" + (Cajero.ToneleroA.StatusTonelero ? "Error" : "Okey") + "</strong></div>");
+
+                $("#" + IdErrorScanner).replaceWith("<div id=" + IdErrorScanner + " " + alertInfo + "><strong>" + Cajero.Scanner.ErrorScanner.substring(0, 12) + "</strong></div>");
+                $("#" + IdStatusScanner).replaceWith("<div id=" + IdStatusScanner + " " + (Cajero.Scanner.StatusScanner ? alertDanger : alertSuccess) + ")'><strong>" + (Cajero.Scanner.StatusScanner ? "Error" : "Okey") + "</strong></div>");
+
+                $("#" + IdErrorDispensador).replaceWith("<div id=" + IdErrorDispensador + " " + alertInfo + "><strong>" + Cajero.Dispensador.ErrorDispensador.substring(0, 12) + "</strong></div>");
+                $("#" + IdStatusDispensador).replaceWith("<div id=" + IdStatusDispensador + " " + (Cajero.Dispensador.StatusDispensador ? alertDanger : alertSuccess) + ")'><strong>" + (Cajero.Dispensador.StatusDispensador ? "Error" : "Okey") + "</strong></div>");
+
+                $("#" + IdErrorAceptador_Billetes).replaceWith("<div id=" + IdErrorAceptador_Billetes + " " + alertInfo + " ><strong>" + Cajero.Aceptador_Billetes.ErrorAceptador_Billetes.substring(0, 12) + "</strong></div>");
+                $("#" + IdStatusAceptador_Billetes).replaceWith("<div id=" + IdStatusAceptador_Billetes + " " + (Cajero.Aceptador_Billetes.StatusAceptador_Billetes ? alertDanger : alertSuccess) + " ><strong>" + (Cajero.Aceptador_Billetes.StatusAceptador_Billetes ? "Error" : "Okey") + "</strong></div>");
+
+                $("#" + IdErrorAceptador_Monedas).replaceWith("<div id=" + IdErrorAceptador_Monedas + " " + alertInfo + " ><strong>" + Cajero.Aceptador_Monedas.ErrorAceptador_Monedas.substring(0, 12) + "</strong></div>");
+                $("#" + IdStatusAceptador_Monedas).replaceWith("<div id=" + IdStatusAceptador_Monedas + " " + (Cajero.Aceptador_Monedas.StatusAceptador_Monedas ? alertDanger : alertSuccess) + " ><strong>" + (Cajero.Aceptador_Monedas.StatusAceptador_Monedas ? "Error" : "Okey") + "</strong></div>");
+
+                $("#" + IdErrorImpresora).replaceWith("<div id=" + IdErrorImpresora + " " + alertInfo + "><strong>" + Cajero.Impresora.ErrorImpresora.substring(0, 12) + "</strong></div>");
+                $("#" + IdStatusImpresora).replaceWith("<div id=" + IdStatusImpresora + " " + (Cajero.Impresora.StatusImpresora ? alertDanger : alertSuccess) + ")'><strong>" + (Cajero.Impresora.StatusImpresora ? "Error" : "Okey") + "</strong></div>");
+                $("#" + IdPapelImpresora).replaceWith("<div id=" + IdPapelImpresora + " " + (!Cajero.Impresora.PapelImpresora ? alertWarning : alertSuccess) + ")'><strong>" + (!Cajero.Impresora.PapelImpresora ? "Papel Bajo" : "Okey") + "</strong></div>");
+
+                $("#" + IdErrorTarjeta).replaceWith("<div id=" + IdErrorTarjeta + " " + alertInfo + "><strong>" + Cajero.Tarjeta.ErrorTarjeta.substring(0, 12) + "</strong></div>");
+                $("#" + IdStatusTarjeta).replaceWith("<div id=" + IdStatusTarjeta + " " + (Cajero.Tarjeta.StatusTarjeta ? alertDanger : alertSuccess) + ")'><strong>" + (Cajero.Tarjeta.StatusTarjeta ? "Error" : "Okey") + "</strong></div>");
+
+
+                var pa = 100 / (Cajero.EfectivoInicial / Cajero.EfectivoDispensado);
+                var pb = 100 - pa;
+
+                pbInitial.text(pa + "%");
+                pbDispensed.text(pb + "%");
+                pbInitial.css({ "width": pa + "%" });
+                pbDispensed.css({ "width": pb + "%" });
+
+                $("#" + id12).replaceWith("<p id=" + id12 + ">" + Cajero.EfectivoActual + "</p>");
+                $("#" + id13).replaceWith("<p id=" + id13 + ">" + Cajero.EfectivoDispensado + "</p>");
+                $("#" + id14).replaceWith("<p id=" + id14 + ">" + Cajero.EfectivoInicial + "</p>");
+
+                BarChartDispensador.datasets[1].bars[0].value = Cajero.Dispensador.EfectivoInicialDispensador;
+                BarChartDispensador.datasets[1].bars[1].value = Cajero.Dispensador.EfectivoDispensadoDispensador;
+                BarChartDispensador.datasets[1].bars[2].value = Cajero.Dispensador.EfectivoActualDispensador;
+
+                BarChartToneleroA.datasets[1].bars[0].value = Cajero.ToneleroA.EfectivoInicialTonelero;
+                BarChartToneleroA.datasets[1].bars[1].value = Cajero.ToneleroA.EfectivoDispensadoTonelero;
+                BarChartToneleroA.datasets[1].bars[2].value = Cajero.ToneleroA.EfectivoActualTonelero;
+
+                BarChartToneleroB.datasets[1].bars[0].value = Cajero.ToneleroB.EfectivoInicialTonelero;
+                BarChartToneleroB.datasets[1].bars[1].value = Cajero.ToneleroB.EfectivoDispensadoTonelero;
+                BarChartToneleroB.datasets[1].bars[2].value = Cajero.ToneleroB.EfectivoActualTonelero;
+
+
+                BarChartDispensador.update();
+                BarChartToneleroA.update();
+                BarChartToneleroB.update();
+
+                Cajero.Dispensador.StatusDispensador ? PanelDispensador.switchClass("panel-info", "panel-danger") : PanelDispensador.switchClass("panel-danger", "panel-info");
+                Cajero.ToneleroA.StatusTonelero ? PanelToneleroA.switchClass("panel-info", "panel-danger") : PanelToneleroA.switchClass("panel-danger", "panel-info");
+                Cajero.ToneleroB.StatusTonelero ? PanelToneleroB.switchClass("panel-info", "panel-danger") : PanelToneleroB.switchClass("panel-danger", "panel-info");
+                Cajero.Aceptador_Monedas.StatusAceptador_Monedas ? PanelAceptador_Monedas.switchClass("panel-info", "panel-danger") : PanelAceptador_Monedas.switchClass("panel-danger", "panel-info");
+                Cajero.Aceptador_Billetes.StatusAceptador_Billetes ? PanelAceptador_Billetes.switchClass("panel-info", "panel-danger") : PanelAceptador_Billetes.switchClass("panel-danger", "panel-info");
+                Cajero.Scanner.StatusScanner ? PanelScanner.switchClass("panel-info", "panel-danger") : PanelScanner.switchClass("panel-danger", "panel-info");
+                Cajero.Tarjeta.StatusTarjeta ? PanelTarjeta.switchClass("panel-info", "panel-danger") : PanelTarjeta.switchClass("panel-danger", "panel-info");
+                Cajero.Impresora.StatusImpresora ? PanelImpresora.switchClass("panel-info", "panel-danger") : PanelImpresora.switchClass("panel-danger", "panel-info");
+
+            };
+
+            proxy.client.notificationStatus = function(data) {
+                if (data === "Enabled") {
+                    $("#enabledNotificationId div").first().replaceWith("<div><input type='hidden' id='enabledid' value='False'/><div class='alert alert-info'>NOTIFICACIONES HABILITADAS. <a href='#' style='color: white'><strong>DESHABILITAR?</strong></a></div></div>");
+                } else if (data === "Disabled") {
+                    $("#enabledNotificationId div").first().replaceWith("<div><input type='hidden' id='enabledid' value='True'/><div class='alert alert-warning'>NOTIFICACIONES DESHABILITADAS. <a href='#' style='color: white'><strong>HABILITAR?</strong></a></div></div>");
+                }
+            }
+
+            $.connection.hub.start().done(function() {
+                proxy.server.registerNotification("@Model.IdCajero");
+            });
+
+            $(window).bind('beforeunload', function() {
+                proxy.server.unRegisterNotification("@Model.IdCajero");
+            });
+
+            $("#enabledNotificationId").click(function() {
+                proxy.server.enabledNotifications(@Model.IdCajero, $("#enabledid").val());
+            });
+
+        });
+
+        function cashLevelsContent() {
+            $.getJSON('@Url.Action("GetCashLevels")', { IdCajero: '@Model.IdCajero' }, function(data) {
+
+                var pa = 100 / (data["EfectivoInicial"] / data["EfectivoDispensado"]);
+                var pb = 100 - pa;
+
+                pbInitial.text(pa + "%");
+                pbDispensed.text(pb + "%");
+                pbInitial.css({ "width": pa + "%" });
+                pbDispensed.css({ "width": pb + "%" });
+
+                $.each(data, function(key, val) {
+                    $("#" + key).replaceWith("<p id=" + key + ">" + val + "</p>");
+                });
+            });
+        }
+
+        var chartOptions = {
+            responsive: true,
+            maintainAspectRatio: true,
+            animationSteps: 30
+        };
+
+        var ChartDispensador = {
+            labels: ["Inicial", "Dispensado", "Actual"],
+            datasets: [
+                {
+                    data: [0, 0, 0],
+                    fillColor: "rgba(0, 0, 0, 0)",
+                    strokeColor: "rgba(0,0,0,0)",
+                    highlightFill: "rgba(0,0,0,0)",
+                    highlightStroke: "rgba(0,0,0,0)"
+                }, {
+                    data: [@Model.Dispensador.EfectivoInicialDispensador, @Model.Dispensador.EfectivoDispensadoDispensador, @Model.Dispensador.EfectivoActualDispensador],
+                    fillColor: "rgba(0, 140, 186, 0.67)",
+                    strokeColor: "rgba(220,220,220,0.8)",
+                    highlightFill: "rgba(220,220,220,0.75)",
+                    highlightStroke: "rgba(220,220,220,1)"
+                }, {
+                    data: [0, 0, 0],
+                    fillColor: "rgba(0, 140, 186, 0)",
+                    strokeColor: "rgba(0,0,0,0)",
+                    highlightFill: "rgba(0,0,0,0)",
+                    highlightStroke: "rgba(0,0,0,0)"
+                }
+            ]
+        };
+
+        var ChartToneleroA = {
+            labels: ["Inicial", "Dispensado", "Actual"],
+            datasets: [
+                {
+                    data: [0, 0, 0],
+                    fillColor: "rgba(0, 0, 0, 0)",
+                    strokeColor: "rgba(0,0,0,0)",
+                    highlightFill: "rgba(0,0,0,0)",
+                    highlightStroke: "rgba(0,0,0,0)"
+                }, {
+                    data: [@Model.ToneleroA.EfectivoInicialTonelero, @Model.ToneleroA.EfectivoDispensadoTonelero, @Model.ToneleroA.EfectivoActualTonelero],
+                    fillColor: "rgba(0, 140, 186, 0.67)",
+                    strokeColor: "rgba(220,220,220,0.8)",
+                    highlightFill: "rgba(220,220,220,0.75)",
+                    highlightStroke: "rgba(220,220,220,1)"
+                }, {
+                    data: [0, 0, 0],
+                    fillColor: "rgba(0, 140, 186, 0)",
+                    strokeColor: "rgba(0,0,0,0)",
+                    highlightFill: "rgba(0,0,0,0)",
+                    highlightStroke: "rgba(0,0,0,0)"
+                }
+            ]
+        };
+
+        var ChartToneleroB = {
+            labels: ["Inicial", "Dispensado", "Actual"],
+            datasets: [
+                {
+                    data: [0, 0, 0],
+                    fillColor: "rgba(0, 0, 0, 0)",
+                    strokeColor: "rgba(0,0,0,0)",
+                    highlightFill: "rgba(0,0,0,0)",
+                    highlightStroke: "rgba(0,0,0,0)"
+                }, {
+                    data: [@Model.ToneleroA.EfectivoInicialTonelero, @Model.ToneleroA.EfectivoDispensadoTonelero, @Model.ToneleroA.EfectivoActualTonelero],
+                    fillColor: "rgba(0, 140, 186, 0.67)",
+                    strokeColor: "rgba(220,220,220,0.8)",
+                    highlightFill: "rgba(220,220,220,0.75)",
+                    highlightStroke: "rgba(220,220,220,1)"
+                }, {
+                    data: [0, 0, 0],
+                    fillColor: "rgba(0, 140, 186, 0)",
+                    strokeColor: "rgba(0,0,0,0)",
+                    highlightFill: "rgba(0,0,0,0)",
+                    highlightStroke: "rgba(0,0,0,0)"
+                }
+            ]
+        };
+
+        var CtxDispensador = $("#Dispensador-canvas-chart").get(0).getContext("2d");
+        var BarChartDispensador = new Chart(CtxDispensador).Bar(ChartDispensador, chartOptions);
+
+        var CtxToneleroA = $("#ToneleroA-canvas-chart").get(0).getContext("2d");
+        var BarChartToneleroA = new Chart(CtxToneleroA).Bar(ChartToneleroA, chartOptions);
+
+        var CtxToneleroB = $("#ToneleroB-canvas-chart").get(0).getContext("2d");
+        var BarChartToneleroB = new Chart(CtxToneleroB).Bar(ChartToneleroB, chartOptions);
+
+        cashLevelsContent();
+
+
+    </script>
+}
+<div class="row">
+    <div class="col-xs-12">
+        <h2>Pantalla de Monitoreo e Información</h2>
+    </div>
+    <hr />
+    <div class="col-md-6 col-xs-12" id="DescriptionContentDiv">
+        <div class="panel panel-primary">
+            <div class="panel-heading">@Html.DisplayNameFor(model => model.NSCajero): @Html.DisplayFor(model => model.NSCajero)</div>
+            <div class="panel-body">
+                Descripcion del Cajero
+            </div>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr class="info">
+                        <th></th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ColorCajero)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.FechaEntregaCajero)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.FechaSalidaCajero)
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td>
+                            @Html.DisplayFor(model => model.ColorCajero)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.FechaEntregaCajero)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.FechaSalidaCajero)
+                        </td>
+                    </tr>
+                </tbody>
+                <thead>
+                    <tr class="info">
+                        <th></th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.FechaEnsambladoCajero)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.NombreCajero)
+                        </th>
+                        <th>
+                            Assambly Person
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td>
+                            @Html.DisplayFor(model => model.FechaEnsambladoCajero)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.NombreCajero)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.NombreEnsamblador)
+                        </td>
+                    </tr>
+                </tbody>
+                <thead>
+                    <tr class="info">
+                        <th></th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.UbicacionCajero)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ModeloCajero)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TipoCajero)
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td>
+                            @Html.DisplayFor(model => model.UbicacionCajero)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.ModeloCajero)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.TipoCajero)
+                        </td>
+                    </tr>
+                </tbody>
+                <thead>
+                    <tr class="info">
+                        <th></th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Cliente)
+                        </th>
+                        <th>
+                            ...
+                        </th>
+                        <th>
+                            ...
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td>
+                            @Html.DisplayFor(model => model.Cliente.NombreCliente)
+                        </td>
+                        <td>
+                            ...
+                        </td>
+                        <td>
+                            ...
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+    <div class="col-md-6 col-xs-12">
+        <div class="col-md-8 col-sm-8 col-xs-8">
+            <div id="enabledNotificationId">
+                <div>
+                    @if (!Model.EnabledNotification && User.IsInRole("Admin"))
+                    {
+                        <input type="hidden" id="enabledid" value="True"/>
+                        <div class="alert alert-warning">
+                            NOTIFICACIONES DESHABILITADAS. <a href="#" style="color: white"><strong>HABILITAR?</strong></a>
+                        </div>
+                    }
+                    else if (Model.EnabledNotification && User.IsInRole("Admin"))
+                    {
+                        <input type="hidden" id="enabledid" value="False"/>
+                        <div class="alert alert-info">
+                            NOTIFICACIONES HABILITADAS. <a href="#" style="color: white"><strong>DESHABILITAR?</strong></a>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-4">
+            <div id="Online-Cajero" class="alert alert-info">
+                <strong>@(Model.Online ? "ON-LINE" : "OFFLINE")</strong>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-6">
+            <h4>Status</h4>
+            <div id="ErrorCajero" class="alert alert-info">
+                <strong>@Model.ErrorCajero</strong>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-6">
+            <h4>Error</h4>
+            <div id="StatusCajero" class="@(Model.StatusCajero ? "alert alert-danger" : "alert alert-info")">
+                <strong>@Model.StatusCajero</strong>
+            </div>
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <h4>Niveles de Efectivo</h4>
+            <hr />
+        </div>
+        <div class="col-md-4 col-xs-4">
+            <h6>
+                Dispensado
+                <span class="label label-success" style="width: 100%; display: block;"></span>
+            </h6>
+            <p id="EfectivoDispensado">
+                @Html.DisplayFor(model => model.EfectivoDispensado)
+            </p>
+        </div>
+        <div class="col-md-4  col-xs-4">
+            <h6>
+                Inicial
+                <span class="label label-info" style="width: 100%; display: block;"></span>
+            </h6>
+            <p id="EfectivoInicial">
+                @Html.DisplayFor(model => model.EfectivoInicial)
+            </p>
+        </div>
+        <div class="col-md-4  col-xs-4">
+            <h6>
+                Actual
+            </h6>
+            <p id="EfectivoActual">
+                @Html.DisplayFor(model => model.EfectivoActual)
+            </p>
+        </div>
+        <div class="col-md-12 col-xs-12">
+            <div class="progress" id="pbNivelEfectivo" style="height: 30px">
+                <div class="progress-bar progress-bar-success" id="pbInitial"></div>
+                <div class="progress-bar progress-bar-info" id="pdDispensed"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12" id="DeepDetails">
+        <h2>Componenetes del Cajero</h2>
+        <hr />
+        <div id="ErrorsCajero">
+            <div class="row">
+                <div class="col-md-4">
+                    <div id="PanelDispensador" class="panel @(Model.Dispensador.StatusDispensador ? "panel-danger" : "panel-info")">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" href="#Panel-Collapse-Dispensador">
+                                    @Html.DisplayNameFor(model => model.Dispensador)
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="Panel-Collapse-Dispensador" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                                @Html.DisplayNameFor(model => model.NSCajero): @Html.ActionLink(Html.DisplayFor(model => model.Dispensador.NSDispensador).ToHtmlString(), "Details", "Dispensador", new { id = Model.Dispensador.IdDispensador }, new object())
+                            </div>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Dispensador.NombreDispensador)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Dispensador.ModeloDispensador)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Dispensador.MarcaDispensador)
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                        <td>
+                                            @Html.DisplayFor(model => model.Dispensador.NombreDispensador)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(model => model.Dispensador.ModeloDispensador)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(model => model.Dispensador.MarcaDispensador)
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="panel-body">
+                                Estado del Componente
+                            </div>
+                            <div class="row">
+                                <div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1">
+                                    <div class="col-md-6 col-xs-6">
+                                        <h5>
+                                            @Html.DisplayNameFor(model => model.Dispensador.StatusDispensador)
+                                        </h5>
+                                        <div id="StatusDispensador" class="@(Model.Dispensador.StatusDispensador ? "alert alert-danger" : "alert alert-success")">
+                                            <strong>@(Model.Dispensador.StatusDispensador ? "Error" : "Okey")</strong>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-xs-6">
+                                        <h5>
+                                            @Html.DisplayNameFor(model => model.Dispensador.ErrorDispensador)
+                                        </h5>
+                                        <div id="ErrorDispensador" class="alert alert-info">
+                                            <strong>@Html.DisplayFor(model => model.Dispensador.ErrorDispensador)</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <canvas id="Dispensador-canvas-chart"></canvas>
+                            </div>
+                            <div class="panel-footer">
+                                <h4>Niveles Efectivo</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div id="PanelToneleroA" class="panel @(Model.ToneleroA.StatusTonelero ? "panel-danger" : "panel-info")">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" href="#Panel-Collapse-ToneleroA">
+                                    @Html.DisplayNameFor(model => model.ToneleroA)
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="Panel-Collapse-ToneleroA" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                                @Html.DisplayNameFor(model => model.ToneleroA.NSTonelero): @Html.ActionLink(Html.DisplayFor(model => model.ToneleroA.NSTonelero).ToHtmlString(), "Details", "Tonelero", new { id = Model.ToneleroA.IdToneleroA }, new object())
+                            </div>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.ToneleroA.NombreTonelero)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.ToneleroA.ModeloTonelero)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.ToneleroA.MarcaTonelero)
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                        <td>
+                                            @Html.DisplayFor(model => model.ToneleroA.NombreTonelero)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(model => model.ToneleroA.ModeloTonelero)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(model => model.ToneleroA.MarcaTonelero)
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="panel-body">
+                                Estado del Componente
+                            </div>
+                            <div class="row">
+                                <div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1">
+                                    <div class="col-md-6 col-xs-6">
+                                        <h5>
+                                            @Html.DisplayNameFor(model => model.ToneleroA.StatusTonelero)
+                                        </h5>
+                                        <div id="StatusToneleroA" class="@(Model.ToneleroA.StatusTonelero ? "alert alert-danger" : "alert alert-success")">
+                                            <strong>@(Model.ToneleroA.StatusTonelero ? "Error" : "Okey")</strong>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-xs-6">
+                                        <h5>
+                                            @Html.DisplayNameFor(model => model.ToneleroA.ErrorTonelero)
+                                        </h5>
+                                        <div id="ErrorToneleroA" class="alert alert-info">
+                                            <strong>@Html.DisplayFor(model => model.ToneleroA.ErrorTonelero)</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <canvas id="ToneleroA-canvas-chart"></canvas>
+                            </div>
+                            <div class="panel-footer">
+                                <h4>Niveles Efectivo</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div id="PanelToneleroB" class="panel @(Model.ToneleroB.StatusTonelero ? "panel-danger" : "panel-info")">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" href="#Panel-Collapse-ToneleroB">
+                                    @Html.DisplayNameFor(model => model.ToneleroB)
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="Panel-Collapse-ToneleroB" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                                @Html.DisplayNameFor(model => model.ToneleroB.NSTonelero): @Html.ActionLink(Html.DisplayFor(model => model.ToneleroB.NSTonelero).ToHtmlString(), "Details", "ToneleroB", new { id = Model.ToneleroB.IdToneleroB }, new object())
+                            </div>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.ToneleroB.NombreTonelero)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.ToneleroB.ModeloTonelero)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.ToneleroB.MarcaTonelero)
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                        <td>
+                                            @Html.DisplayFor(model => model.ToneleroB.NombreTonelero)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(model => model.ToneleroB.ModeloTonelero)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(model => model.ToneleroB.MarcaTonelero)
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="panel-body">
+                                Estado del Componente
+                            </div>
+                            <div class="row">
+                                <div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1">
+                                    <div class="col-md-6 col-xs-6">
+                                        <h5>
+                                            @Html.DisplayNameFor(model => model.ToneleroB.StatusTonelero)
+                                        </h5>
+                                        <div id="StatusToneleroB" class="@(Model.ToneleroB.StatusTonelero ? "alert alert-danger" : "alert alert-success")">
+                                            <strong>@(Model.ToneleroB.StatusTonelero ? "Error" : "OK")</strong>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-xs-6">
+                                        <h5>
+                                            @Html.DisplayNameFor(model => model.ToneleroB.ErrorTonelero)
+                                        </h5>
+                                        <div id="ErrorToneleroB" class="alert alert-info">
+                                            <strong>@Html.DisplayFor(model => model.ToneleroB.ErrorTonelero)</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <canvas id="ToneleroB-canvas-chart"></canvas>
+                            </div>
+                            <div class="panel-footer">
+                                <h4>Niveles Efectivo</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div id="PanelImpresora" class="panel @(Model.Impresora.StatusImpresora ? "panel-danger" : "panel-info")">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" href="#Panel-Collapse-Impresora">
+                                    @Html.DisplayNameFor(model => model.Impresora)
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="Panel-Collapse-Impresora" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                                @Html.DisplayNameFor(model => model.Impresora.NSImpresora): @Html.ActionLink(Html.DisplayFor(model => model.Impresora.NSImpresora).ToHtmlString(), "Details", "Impresora", new { id = Model.Impresora.IdImpresora }, new object())
+                            </div>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Impresora.NombreImpresora)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Impresora.ModeloImpresora)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Impresora.MarcaImpresora)
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                        <td>
+                                            @Html.DisplayFor(model => model.Impresora.NombreImpresora)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(model => model.Impresora.ModeloImpresora)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(model => model.Impresora.MarcaImpresora)
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="panel-body">
+                                Estado del Componente
+                            </div>
+                            <div class="row">
+                                <div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1">
+                                    <div class="row">
+                                        <div class="col-md-4 col-xs-4">
+                                            <h5>
+                                                @Html.DisplayNameFor(model => model.Impresora.StatusImpresora)
+                                            </h5>
+                                            <div id="StatusImpresora" class="@(Model.Impresora.StatusImpresora ? "alert alert-danger" : "alert alert-success")">
+                                                <strong>@(Model.Impresora.StatusImpresora ? "Error" : "OK")</strong>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-xs-4">
+                                            <h5>
+                                                @Html.DisplayNameFor(model => model.Impresora.ErrorImpresora)
+                                            </h5>
+                                            <div id="ErrorImpresora" class="alert alert-info">
+                                                <strong>@Html.DisplayFor(model => model.Impresora.ErrorImpresora)</strong>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-xs-4">
+                                            <h5>
+                                                @Html.DisplayNameFor(model => model.Impresora.PapelImpresora)
+                                            </h5>
+                                            <div id="PapelImpresora" class="@(!Model.Impresora.PapelImpresora ? "alert alert-warning" : "alert alert-success")">
+                                                <strong>@(!Model.Impresora.PapelImpresora ? "Papel Bajo" : "OK")</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div id="PanelTarjeta" class="panel @(Model.Tarjeta.StatusTarjeta ? "panel-danger" : "panel-info")">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" href="#Panel-Collapse-Tarjeta">
+                                    @Html.DisplayNameFor(model => model.Tarjeta)
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="Panel-Collapse-Tarjeta" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                                @Html.DisplayNameFor(model => model.Tarjeta.NSTarjeta): @Html.ActionLink(Html.DisplayFor(model => model.Tarjeta.NSTarjeta).ToHtmlString(), "Details", "Tarjeta", new { id = Model.Tarjeta.IdTarjeta }, new object())
+                            </div>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Tarjeta.NombreTarjeta)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Tarjeta.ModeloTarjeta)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Tarjeta.MarcaTarjeta)
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                        <td>
+                                            @Html.DisplayFor(model => model.Tarjeta.NombreTarjeta)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(model => model.Tarjeta.ModeloTarjeta)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(model => model.Tarjeta.MarcaTarjeta)
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="panel-body">
+                                Estado del Componente
+                            </div>
+                            <div class="row">
+                                <div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1">
+                                    <div class="col-md-6 col-xs-6">
+                                        <h5>
+                                            @Html.DisplayNameFor(model => model.Tarjeta.StatusTarjeta)
+                                        </h5>
+                                        <div id="StatusTarjeta" class="@(Model.Tarjeta.StatusTarjeta ? "alert alert-danger" : "alert alert-success")">
+                                            <strong>@(Model.Tarjeta.StatusTarjeta ? "Error" : "OK")</strong>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-xs-6">
+                                        <h5>
+                                            @Html.DisplayNameFor(model => model.Tarjeta.ErrorTarjeta)
+                                        </h5>
+                                        <div id="ErrorTarjeta" class="alert alert-info">
+                                            <strong>@Html.DisplayFor(model => model.Tarjeta.ErrorTarjeta)</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div id="PanelScanner" class="panel @(Model.Scanner.StatusScanner ? "panel-danger" : "panel-info")">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" href="#Panel-Collapse-Scanner">
+                                    @Html.DisplayNameFor(model => model.Scanner)
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="Panel-Collapse-Scanner" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                                @Html.DisplayNameFor(model => model.Scanner.NSScanner): @Html.ActionLink(Html.DisplayFor(model => model.Scanner.NSScanner).ToHtmlString(), "Details", "Scanner", new { id = Model.Scanner.IdScanner }, new object())
+                            </div>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Scanner.NombreScanner)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Scanner.ModeloScanner)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Scanner.MarcaScanner)
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                        <td>
+                                            @Html.DisplayFor(model => model.Scanner.NombreScanner)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(model => model.Scanner.ModeloScanner)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(model => model.Scanner.MarcaScanner)
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="panel-body">
+                                Estado del Componente
+                            </div>
+                            <div class="row">
+                                <div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1">
+                                    <div class="col-md-6 col-xs-6">
+                                        <h5>
+                                            @Html.DisplayNameFor(model => model.Scanner.StatusScanner)
+                                        </h5>
+                                        <div id="StatusScanner" class="@(Model.Scanner.StatusScanner ? "alert alert-danger" : "alert alert-success")">
+                                            <strong>@(Model.Scanner.StatusScanner ? "Error" : "OK")</strong>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-xs-6">
+                                        <h5>
+                                            @Html.DisplayNameFor(model => model.Scanner.ErrorScanner)
+                                        </h5>
+                                        <div id="ErrorScanner" class="alert alert-info">
+                                            <strong>@Html.DisplayFor(model => model.Scanner.ErrorScanner)</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div id="PanelAceptador_Billetes" class="panel @(Model.Aceptador_Billetes.StatusAceptador_Billetes ? "panel-danger" : "panel-info")">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" href="#Panel-Collapse-Aceptador_Billetes">
+                                    @Html.DisplayNameFor(model => model.Aceptador_Billetes)
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="Panel-Collapse-Aceptador_Billetes" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                                @Html.DisplayNameFor(model => model.Aceptador_Billetes.NSAceptador_Billetes): @Html.ActionLink(Html.DisplayFor(model => model.Aceptador_Billetes.NSAceptador_Billetes).ToHtmlString(), "Details", "Aceptador_Billetes", new { id = Model.Aceptador_Billetes.IdAceptador_Billetes }, new object())
+                            </div>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Aceptador_Billetes.NombreAceptador_Billetes)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Aceptador_Billetes.ModeloAceptador_Billetes)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Aceptador_Billetes.MarcaAceptador_Billetes)
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                        <td>
+                                            @Html.DisplayFor(model => model.Aceptador_Billetes.NombreAceptador_Billetes)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(model => model.Aceptador_Billetes.ModeloAceptador_Billetes)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(model => model.Aceptador_Billetes.MarcaAceptador_Billetes)
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="panel-body">
+                                Estado del Componente
+                            </div>
+                            <div class="row">
+                                <div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1">
+                                    <div class="col-md-6 col-xs-6">
+                                        <h5>
+                                            @Html.DisplayNameFor(model => model.Aceptador_Billetes.StatusAceptador_Billetes)
+                                        </h5>
+                                        <div id="StatusAceptador_Billetes" class="@(Model.Aceptador_Billetes.StatusAceptador_Billetes ? "alert alert-danger" : "alert alert-success")">
+                                            <strong>@(Model.Aceptador_Billetes.StatusAceptador_Billetes ? "Error" : "OK")</strong>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-xs-6">
+                                        <h5>
+                                            @Html.DisplayNameFor(model => model.Aceptador_Billetes.ErrorAceptador_Billetes)
+                                        </h5>
+                                        <div id="ErrorAceptador_Billetes" class="alert alert-info">
+                                            <strong>@Html.DisplayFor(model => model.Aceptador_Billetes.ErrorAceptador_Billetes)</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div id="PanelAceptador_Monedas" class="panel @(Model.Aceptador_Monedas.StatusAceptador_Monedas ? "panel-danger" : "panel-info")">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" href="#Panel-Collapse-Aceptador_Monedas">
+                                    @Html.DisplayNameFor(model => model.Aceptador_Monedas)
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="Panel-Collapse-Aceptador_Monedas" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                                @Html.DisplayNameFor(model => model.NSCajero): @Html.ActionLink(Html.DisplayFor(model => model.Aceptador_Monedas.NSAceptador_Monedas).ToHtmlString(), "Details", "Aceptador_Monedas", new { id = Model.Aceptador_Monedas.IdAceptador_Monedas }, new object())
+                            </div>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Aceptador_Monedas.NombreAceptador_Monedas)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Aceptador_Monedas.ModeloAceptador_Monedas)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Aceptador_Monedas.MarcaAceptador_Monedas)
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                        <td>
+                                            @Html.DisplayFor(model => model.Aceptador_Monedas.NombreAceptador_Monedas)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(model => model.Aceptador_Monedas.ModeloAceptador_Monedas)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(model => model.Aceptador_Monedas.MarcaAceptador_Monedas)
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="panel-body">
+                                Estado del Componente
+                            </div>
+                            <div class="row">
+                                <div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1">
+                                    <div class="col-md-6 col-xs-6">
+                                        <h5>
+                                            @Html.DisplayNameFor(model => model.Aceptador_Monedas.StatusAceptador_Monedas)
+                                        </h5>
+                                        <div id="StatusAceptador_Monedas" class="@(Model.Aceptador_Monedas.StatusAceptador_Monedas ? "alert alert-danger" : "alert alert-success")">
+                                            <strong>@(Model.Dispensador.StatusDispensador ? "Error" : "OK")</strong>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-xs-6">
+                                        <h5>
+                                            @Html.DisplayNameFor(model => model.Aceptador_Monedas.ErrorAceptador_Monedas)
+                                        </h5>
+                                        <div id="ErrorAceptador_Monedas" class="alert alert-info">
+                                            <strong>@Html.DisplayFor(model => model.Aceptador_Monedas.ErrorAceptador_Monedas)</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+
+    <div class="col-md-12">
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.IdCajero }) |
+            @Html.ActionLink("Back to List", "Index") |
+            @Html.ActionLink("Reportes", "IndexRxC", "ReportesXCajero", new { id = Model.IdCajero }, new object())
+        </p>
+    </div>
+</div>

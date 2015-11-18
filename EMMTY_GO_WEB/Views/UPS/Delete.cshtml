@@ -1,0 +1,71 @@
+﻿@model EMMTY_GO_WEB.Models.UPS
+
+@{
+    ViewBag.Title = "Eliminar";
+}
+
+<h2>Delete</h2>
+
+<h3>Seguro deceas eliminar este UPS?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MarcaUPS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MarcaUPS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModeloUPS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModeloUPS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreUPS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreUPS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NSUPS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NSUPS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StatusUPS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StatusUPS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ErrorUPS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ErrorUPS)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink("Regresar a la lista", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,44 @@
+﻿@using GridMvc.Html
+@model IEnumerable<EMMTY_GO_WEB.Models.Dispensador>
+
+@{
+    ViewBag.Title = "Dispensadores";
+}
+
+<h2>Listado de Dispensadores</h2>
+
+@if (User.IsInRole("Admin"))
+{
+    <p>
+        @Html.ActionLink("Registrar nuevo Dispensador", "Create")
+    </p>
+}
+
+<div id="ListTableId" class="table-responsive">@Html.Grid(Model).Columns(columns =>
+{
+    columns.Add(c => c.NSDispensador).Titled(Html.DisplayNameFor(c => c.NSDispensador).ToHtmlString()).Filterable(true).Sanitized(false);
+    columns.Add(c => c.NombreDispensador).Titled(Html.DisplayNameFor(c => c.NombreDispensador).ToHtmlString());
+    columns.Add(c => c.MarcaDispensador).Titled(Html.DisplayNameFor(c => c.MarcaDispensador).ToHtmlString());
+    columns.Add(c => c.ModeloDispensador).Titled(Html.DisplayNameFor(c => c.ModeloDispensador).ToHtmlString());
+    columns.Add().Sanitized(false).Encoded(false).RenderValueAs(
+        o =>
+        {
+            var added = "";
+            if (User.IsInRole("Admin"))
+                added = Html.ActionLink("Editar", "Edit", new { id = o.IdDispensador }).ToHtmlString();
+            added += " | " + @Html.ActionLink("Info", "Details", new { id = o.IdDispensador });
+            return added + (" | " + Html.ActionLink("Eliminar", "Delete", new { id = o.IdDispensador }).ToHtmlString());
+        });
+}).WithPaging(10).Sortable(true)</div>
+@section scripts
+{
+    <script>
+            $(document).ready(function () {
+                $("#ListTableId table:first").addClass("table-condensed");
+            });
+    </script>
+}
+
+
+
+

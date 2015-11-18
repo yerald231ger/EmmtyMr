@@ -1,0 +1,136 @@
+﻿@model IEnumerable<EMMTY_GO_WEB.Models.Cajero>
+@using GridMvc.Html
+@using Microsoft.AspNet.Identity
+
+@{
+    ViewBag.Title = "Cajeros";
+}
+
+<h2>Listado de Cajeros</h2>
+<p>
+    @if (User.IsInRole("Admin")) { 
+    @Html.ActionLink("Ensamblar nuevo cajero", "Create")
+    }
+</p>
+
+<table>
+    <tr>
+        <th>
+            <div class="input-group">
+                <span class="input-group-addon" style="background-color: transparent; border-right:none;"><span class="glyphicon glyphicon-search"></span></span>
+                <input type="text" size="22" style="border-left:none;" name="SearchNSCajeroTextBox" class="form-control" placeholder="buscar por numero de serie" id="NSCajeroTB">
+            </div>
+        </th>
+    </tr>
+</table>
+
+<div id="divTableCajero" class="table-responsive">
+   @Html.Grid(Model).Columns(columns =>
+{
+    columns.Add(c => c.NSCajero).Titled("Numero de Serie").Filterable(true).Sanitized(false).Css("text-left")
+        .Encoded(false).RenderValueAs(o => Html.ActionLink(o.NSCajero, "Details", "Cajero", new {Id = o.IdCajero}, null).ToHtmlString());
+    columns.Add().Titled("Online").Css("text-center").RenderValueAs(c => c.Online ? "ONLINE" : "OFFLINE");
+    columns.Add(c => c.UbicacionCajero).Titled("Ubicacion").Css("text-center");
+    columns.Add(c => c.ErrorCajero).Titled("Error").Css("text-center");
+    columns.Add(c => c.StatusCajero).Titled("Status").Css("text-center");
+    columns.Add(c => c.ModeloCajero).Titled("Modelo").Css("text-center");
+    columns.Add().Titled("Nivel").Css("text-center").Sanitized(false).Encoded(false).RenderValueAs(o => string.Format("<div class='DivCashFlow' id='{0}'></div>", o.IdCajero));
+    columns.Add().Sanitized(false).Encoded(false).RenderValueAs(
+        o =>
+        {
+            if (!User.IsInRole("Admin"))
+                return string.Empty;
+
+            var added = Html.ActionLink("Editar", "Edit", new {id = o.IdCajero}).ToHtmlString();
+            return added + (" | " + Html.ActionLink("Eliminar", "Delete", new {id = o.IdCajero}).ToHtmlString());
+        });
+}).WithPaging(10).Sortable(true)
+</div>
+@section scripts
+{
+    <script src="~/Scripts/jquery.signalR-2.2.0.min.js"></script>
+    <script src="~/signalr/hubs"></script>
+    <script>
+
+        var Circles = new Array();
+        var IdsCajeros = new Array();
+        var Circle = {
+            Id: null,
+            RaphaelElement: null,
+            Constrcutor: function(id, raphaelElement) {
+                this.Id = id;
+                this.RaphaelElement = raphaelElement;
+            }
+        }
+        var AtmCashLevels = {
+            IdCajero: null,
+            EfectivoActual: null,
+            NivelBajoEfectivo: null
+        }
+
+
+        function SetRaphaels() {
+            $(".DivCashFlow").each(function(div) {
+                var paper = Raphael(this);
+                var circle = paper.circle(11.5, 11.5, 11);
+                circle.attr({ "fill": "gray", "stroke": "lightgray" });
+                var c = new Circle.Constrcutor(this.id, circle);
+                Circles.push(c);
+                IdsCajeros.push(this.id);
+            });
+        }
+
+        function alertCashLevel(raphaelElement, atmCashLevel) {
+            if (atmCashLevel.EfectivoActual <= 0)
+                raphaelElement.animate({ fill: "#FF4719", "stroke": "#FFA38C" }, 1000, "lineal");
+            else if (atmCashLevel.EfectivoActual <= atmCashLevel.NivelBajoEfectivo)
+                raphaelElement.animate({ fill: "#FFBF00", "stroke": "#FFDF80" }, 1000, "lineal");
+            else if (atmCashLevel.EfectivoActual > atmCashLevel.NivelBajoEfectivo)
+                raphaelElement.animate({ fill: "#1EFA78", "stroke": "#8EFCBC" }, 1000, "lineal");
+        }
+
+        SetRaphaels();
+        var proxy = $.connection.atmsMonitorHub;
+
+        proxy.client.CashLevels = function(jsonData) {
+            AtmCashLevels = $.parseJSON(jsonData);
+            for (var i = 0; i < Circles.length; i++) {
+                if (Circles[i].Id == AtmCashLevels.IdCajero) {
+                    alertCashLevel(Circles[i].RaphaelElement, AtmCashLevels);
+                    break;
+                }
+            }
+        };
+
+        proxy.client.PopulateCashLevels = function(jsonData) {
+            var cashLevelsAtms = $.parseJSON(jsonData);
+            cashLevelsAtms.forEach(function(value, index) {
+                for (var i = 0; i < Circles.length; i++) {
+                    if (Circles[i].Id == value.IdCajero) {
+                        alertCashLevel(Circles[i].RaphaelElement, value);
+                        break;
+                    }
+                }
+            });
+        };
+
+        $.connection.hub.start().done(function() {
+            proxy.server.getCashLevels(IdsCajeros, "@User.Identity.GetUserId()");
+        });
+
+        $("#NSCajeroTB").keyup(function() {
+            var str = $(this).val();
+            $("#divTableCajero").load("@Url.Action("FindCajero")", { NSCajero: str }, function (response,status,xhr) {
+                debugger;
+                if (status === "success") {
+                    Circles = new Array();
+                    SetRaphaels();
+                    proxy.server.getCashLevels(IdsCajeros, "@User.Identity.GetUserId()");
+                } else {
+                    $("#divTableCajero").html("An error has occurred " + xhr.status + " " + xhr.statusText);
+                }
+            });
+        });
+    </script>
+
+}

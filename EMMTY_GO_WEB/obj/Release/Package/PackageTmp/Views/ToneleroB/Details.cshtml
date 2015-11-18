@@ -1,0 +1,194 @@
+﻿@section scripts
+{
+    <script type="text/javascript">
+        var ToneleroB = {
+            IdToneleroB: 0,
+            NombreTonelero: null,
+            ModeloTonelero: null,
+            STonelero: null,
+            StatusTonelero: null,
+            TipoMoneda: null,
+            EfectivoActualTonelero: null,
+            EfectivoDispensadoTonelero: null,
+            EfectivoInicialTonelero: null,
+            ErrorTonelero: null,
+            arcaTonelero: null,
+            Cajeros: null,
+            Cajeros1: null
+        };
+        var chartOptions = {
+            responsive: true,
+            maintainAspectRatio: true,
+            animationSteps: 30
+        };
+        var ChartDispensadorData = {
+            labels: ["Inicial", "Dispensado", "Actual"],
+            datasets: [
+                {
+                    data: [0, 0, 0],
+                    fillColor: "rgba(0, 0, 0, 0)",
+                    strokeColor: "rgba(0,0,0,0)",
+                    highlightFill: "rgba(0,0,0,0)",
+                    highlightStroke: "rgba(0,0,0,0)"
+                }, {
+                    data: [@Model.EfectivoInicialTonelero, @Model.EfectivoDispensadoTonelero, @Model.EfectivoActualTonelero],
+                    fillColor: "rgba(0, 140, 186, 0.67)",
+                    strokeColor: "rgba(220,220,220,0.8)",
+                    highlightFill: "rgba(220,220,220,0.75)",
+                    highlightStroke: "rgba(220,220,220,1)"
+                }, {
+                    data: [0, 0, 0],
+                    fillColor: "rgba(0, 140, 186, 0)",
+                    strokeColor: "rgba(0,0,0,0)",
+                    highlightFill: "rgba(0,0,0,0)",
+                    highlightStroke: "rgba(0,0,0,0)"
+                }
+            ]
+        };
+
+        var ctx = $("#canvas-chart").get(0).getContext("2d");
+        var BarChart = new Chart(ctx).Bar(ChartDispensadorData, chartOptions);
+
+        var UpdateCashLevels = setInterval(function() { Refresh() }, 2500);
+
+        var id00 = "error-panel";
+        var id01 = "ErrorTonelero";
+        var id02 = "StatusTonelero";
+        var id03 = "EfectivoActualTonelero";
+        var id04 = "EfectivoDispensadoTonelero";
+        var id05 = "EfectivoInicialTonelero";
+
+        var alertInfo = "class='alert alert-info'";
+        var alertDanger = "class='alert alert-danger'";
+        var alertSuccess = "class='alert alert-success'";
+
+        var collapsed = false;
+
+        function Refresh() {
+            $.getJSON("@Url.Action("GetInfo")", { idTonelero: "@Model.IdToneleroB" }, function(data) {
+
+                ToneleroB = $.parseJSON(data);
+                $("#" + id01).replaceWith("<div id=" + id01 + " " + alertInfo + "><strong>" + ToneleroB.ErrorTonelero + "</strong></div>");
+                $("#" + id02).replaceWith("<div id=" + id02 + " " + (ToneleroB.StatusTonelero ? alertDanger : alertSuccess) + ")'><strong>" + (ToneleroB.StatusTonelero ? ToneleroB.ErrorTonelero : "Okey") + "</strong></div>");
+
+                BarChart.datasets[1].bars[0].value = ToneleroB.EfectivoActualTonelero;
+                BarChart.datasets[1].bars[1].value = ToneleroB.EfectivoDispensadoTonelero;
+                BarChart.datasets[1].bars[2].value = ToneleroB.EfectivoInicialTonelero;
+
+                BarChart.update();
+
+                if (!collapsed && ToneleroB.StatusTonelero) {
+                    $("#" + id00).collapse("toggle");
+                    collapsed = true;
+                }
+
+                if (collapsed && !ToneleroB.StatusTonelero) {
+                    $("#" + id00).collapse("toggle");
+                    collapsed = false;
+                }
+            });
+        }
+
+    </script>
+}
+@model EMMTY_GO_WEB.Models.ToneleroB
+
+@{
+    ViewBag.Title = "Monitoreo";
+}
+
+<h2>Monitoreo @Html.DisplayFor(model => model.NombreTonelero)</h2>
+
+<div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-primary">
+
+                <div class="panel-heading">@Html.DisplayNameFor(model => model.NSTonelero): @Html.DisplayFor(model => model.NSTonelero)</div>
+                <div class="panel-body">
+                    Descripcion del componente
+                </div>
+                <table class="table">
+                    <tr>
+                        <th></th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.NombreTonelero)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ModeloTonelero)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.MarcaTonelero)
+                        </th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            @Html.DisplayFor(model => model.NombreTonelero)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.ModeloTonelero)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.MarcaTonelero)
+                        </td>
+                    </tr>
+                </table>
+                <div class="panel-body">
+                    Estado del Componente
+                </div>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1">
+                        <div class="row">
+                            <div class="col-md-6 col-xs-6">
+                                <h5>
+                                    @Html.DisplayNameFor(model => model.StatusTonelero)
+                                </h5>
+                                <div id="StatusTonelero" class="@(Model.StatusTonelero ? "alert alert-danger" : "alert alert-success")">
+                                    <strong>@(Model.StatusTonelero ? "Error" : "Okey")</strong>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xs-6">
+                                <h5>
+                                    @Html.DisplayNameFor(model => model.ErrorTonelero)
+                                </h5>
+                                <div id="ErrorTonelero" class="alert alert-info">
+                                    <strong>@Html.DisplayFor(model => model.ErrorTonelero)</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h4>Niveles Efectivo Dispensador</h4>
+            <canvas id="canvas-chart"></canvas>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-info collapse" id="error-panel">
+                <div class="panel-heading">
+                    Descripcion del Error
+                </div>
+                <div class="panel-body" id="error-panel-body">
+                    ...
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<p>
+    @if (User.IsInRole("Admin"))
+    {
+        @Html.ActionLink("Editar", "Edit", new { id = Model.IdToneleroB })
+        @:|
+        @Html.ActionLink("Regresar a la lista", "Index")
+        @:|
+    }
+    @if(Model.Cajeros.Count > 0)
+    {
+        @Html.ActionLink("Regresar al cajero", "Details", "Cajero", new { id = Model.Cajeros.First().IdCajero }, new { })
+    }
+</p>

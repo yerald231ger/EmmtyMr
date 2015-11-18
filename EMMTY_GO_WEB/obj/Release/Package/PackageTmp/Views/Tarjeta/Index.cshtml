@@ -1,0 +1,41 @@
+﻿@using GridMvc.Html
+@model IEnumerable<EMMTY_GO_WEB.Models.Tarjeta>
+
+@{
+    ViewBag.Title = "Tarjetas";
+}
+
+<h2>Listado de Tarjetas</h2>
+
+@if (User.IsInRole("Admin"))
+{
+    <p>
+        @Html.ActionLink("Registrar nueva Tarjeta", "Create")
+    </p>
+}
+
+
+<div id="ListTableId" class="table-responsive">@Html.Grid(Model).Columns(columns =>
+{
+    columns.Add(c => c.NSTarjeta).Titled(Html.DisplayNameFor(c => c.NSTarjeta).ToHtmlString()).Filterable(true).Sanitized(false);
+    columns.Add(c => c.NombreTarjeta).Titled(Html.DisplayNameFor(c => c.NombreTarjeta).ToHtmlString());
+    columns.Add(c => c.MarcaTarjeta).Titled(Html.DisplayNameFor(c => c.MarcaTarjeta).ToHtmlString());
+    columns.Add(c => c.ModeloTarjeta).Titled(Html.DisplayNameFor(c => c.ModeloTarjeta).ToHtmlString());
+    columns.Add().Sanitized(false).Encoded(false).RenderValueAs(
+        o =>
+        {
+            var added = "";
+            if (User.IsInRole("Admin"))
+                added = Html.ActionLink("Editar", "Edit", new { id = o.IdTarjeta }).ToHtmlString();
+            added += " | " + @Html.ActionLink("Info", "Details", new { id = o.IdTarjeta });
+            return added + (" | " + Html.ActionLink("Elimnar", "Delete", new { id = o.IdTarjeta }).ToHtmlString());
+        });
+}).WithPaging(10).Sortable(true)</div>
+@section scripts
+{
+    <script>
+        $(document).ready(function() {
+            $("#ListTableId table:first").addClass("table-condensed");
+        });
+    </script>
+}

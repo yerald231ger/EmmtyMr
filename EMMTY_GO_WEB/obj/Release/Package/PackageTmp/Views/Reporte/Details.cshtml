@@ -1,0 +1,66 @@
+﻿@model EMMTY_GO_WEB.Models.Reporte
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Reporte</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaReporte)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaReporte)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CorrectivoReporte)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CorrectivoReporte)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PreventivoReporte)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PreventivoReporte)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TecnicoReporte)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TecnicoReporte)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreReporte)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreReporte)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NSReporte)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NSReporte)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdReporte }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

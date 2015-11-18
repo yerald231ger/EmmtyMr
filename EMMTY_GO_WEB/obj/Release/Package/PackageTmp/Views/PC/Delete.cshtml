@@ -1,0 +1,57 @@
+﻿@model EMMTY_GO_WEB.Models.PC
+
+@{
+    ViewBag.Title = "Elimnar";
+}
+
+<h3>Seguro deceas eliminar esta PC?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NSPC)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NSPC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NombrePC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombrePC)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MarcaPC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MarcaPC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModeloPC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModeloPC)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.OSPC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OSPC)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink("Regresar a la lista", "Index")
+        </div>
+    }
+</div>

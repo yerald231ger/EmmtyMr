@@ -1,0 +1,179 @@
+﻿@model EMMTY_GO_WEB.Models.ApplicationUser
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-6 col-sm-4">
+            <h4>ApplicationUser</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.IsConnected)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.IsConnected)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Name)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.LastName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.LastName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.AlterEmail)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.AlterEmail)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.AlterPhoneNumber)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.AlterPhoneNumber)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Email)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Email)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.PhoneNumber)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.PhoneNumber)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.UserName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.UserName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.EmailConfirmed)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.EmailConfirmed)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.PasswordHash)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.PasswordHash)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.SecurityStamp)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.SecurityStamp)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.PhoneNumberConfirmed)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.PhoneNumberConfirmed)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.TwoFactorEnabled)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.TwoFactorEnabled)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.LockoutEndDateUtc)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.LockoutEndDateUtc)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.LockoutEnabled)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.LockoutEnabled)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.AccessFailedCount)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.AccessFailedCount)
+                </dd>
+            </dl>
+        </div>
+        <div class="col-md-6 col-sm-4">
+            @if (!ViewBag.IsAtm && !ViewBag.IsAdmin)
+            {
+                <h4>Cajeros Asignados</h4>
+                <hr/>
+                <div class="col-md-12">
+                    <div class="thumbnail">
+                        <div class="caption">
+                            <h4>
+                                @Model.Cajeros.Count de @Model.Cliente.Cajeros.Count Cajero(s) asignado(s) al usuario, corresponientes al cliente @Model.Cliente.NombreCliente
+                            </h4>
+                            <p>
+                                @{ ViewBag.Cajeros = Model.Cajeros; }
+                                <a href="@Url.Action("ListCajerosUser", new {id = Model.Id})" class="btn btn-default" role="button">
+                                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                                    <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+                                    Click aqui para asignar o quitar cajeros
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

@@ -1,0 +1,66 @@
+﻿@model EMMTY_GO_WEB.Models.Reporte
+
+@{
+    ViewBag.Title = "DetailsRxC";
+}
+
+<h2>DetailsRxC</h2>
+
+<div>
+    <h4>Reporte</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaReporte)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaReporte)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CorrectivoReporte)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CorrectivoReporte)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PreventivoReporte)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PreventivoReporte)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TecnicoReporte)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TecnicoReporte)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreReporte)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreReporte)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NSReporte)
+        </dt>
+       
+        <dd>
+            @Html.DisplayFor(model => model.NSReporte)
+        </dd>
+        
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "EditRxC", new { id = Model.IdReporte, IdCajero = ViewBag.IdCajero  }) |
+    @Html.ActionLink("Back to List", "IndexRxC", new { id = ViewBag.IdCajero })
+</p>

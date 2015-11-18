@@ -1,0 +1,40 @@
+﻿@using GridMvc.Html
+@model IEnumerable<EMMTY_GO_WEB.Models.Impresora>
+
+@{
+    ViewBag.Title = "Impresoras";
+}
+<h2>Listado de Impresoras</h2>
+
+@if (User.IsInRole("Admin"))
+{
+    <p>
+        @Html.ActionLink("Registrar nueva Impresora", "Create")
+    </p>
+}
+
+<div id="ListTableId" class="table-responsive">@Html.Grid(Model).Columns(columns =>
+{
+    columns.Add(c => c.NSImpresora).Titled(Html.DisplayNameFor(c => c.NSImpresora).ToHtmlString()).Filterable(true).Sanitized(false);
+    columns.Add(c => c.NombreImpresora).Titled(Html.DisplayNameFor(c => c.NombreImpresora).ToHtmlString());
+    columns.Add(c => c.MarcaImpresora).Titled(Html.DisplayNameFor(c => c.MarcaImpresora).ToHtmlString());
+    columns.Add(c => c.ModeloImpresora).Titled(Html.DisplayNameFor(c => c.ModeloImpresora).ToHtmlString());
+    columns.Add().Sanitized(false).Encoded(false).RenderValueAs(
+        o =>
+        {
+            var added = "";
+            if (User.IsInRole("Admin"))
+                added = Html.ActionLink("Editar", "Edit", new { id = o.IdImpresora }).ToHtmlString();
+            added += " | " + @Html.ActionLink("Info", "Details", new { id = o.IdImpresora });
+            return added + (" | " + Html.ActionLink("Eliminar", "Delete", new { id = o.IdImpresora }).ToHtmlString());
+        });
+}).WithPaging(10).Sortable(true)</div>
+@section scripts
+{
+    <script>
+        $(document).ready(function() {
+            $("#ListTableId table:first").addClass("table-condensed");
+        });
+    </script>
+}
+

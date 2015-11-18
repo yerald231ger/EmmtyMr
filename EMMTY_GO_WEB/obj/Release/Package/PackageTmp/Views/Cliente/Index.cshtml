@@ -1,0 +1,38 @@
+﻿@using GridMvc.Html
+@model IEnumerable<EMMTY_GO_WEB.Models.Cliente>
+
+@{
+    ViewBag.Title = "Index";
+}
+<h2>Listado de Clientes</h2>
+
+@if (User.IsInRole("Admin"))
+{
+    <p>
+        @Html.ActionLink("Registrar nuevo cliente", "Create")
+    </p>
+}
+
+<div id="ListTableId" class="table-responsive">@Html.Grid(Model).Columns(columns =>
+{
+    columns.Add(c => c.NombreCliente).Titled(Html.DisplayNameFor(c => c.NombreCliente).ToHtmlString()).Filterable(true).Sanitized(false);
+    columns.Add(c => c.LicenciaStatus).Titled(Html.DisplayNameFor(c => c.LicenciaStatus).ToHtmlString());
+    columns.Add(c => c.TipoCliente).Titled(Html.DisplayNameFor(c => c.TipoCliente).ToHtmlString());
+    columns.Add().Sanitized(false).Encoded(false).RenderValueAs(
+        o =>
+        {
+            var added = "";
+            if (User.IsInRole("Admin"))
+                added = Html.ActionLink("Edit", "Edit", new { id = o.IdCliente }).ToHtmlString();
+            added += " | " + @Html.ActionLink("Details", "Details", new { id = o.IdCliente });
+            return added + (" | " + Html.ActionLink("Delete", "Delete", new { id = o.IdCliente }).ToHtmlString());
+        });
+}).WithPaging(10).Sortable(true)</div>
+@section scripts
+{
+    <script>
+            $(document).ready(function () {
+                $("#ListTableId table:first").addClass("table-condensed");
+            });
+    </script>
+}

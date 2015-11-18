@@ -1,0 +1,40 @@
+﻿@using GridMvc.Html
+@model IEnumerable<EMMTY_GO_WEB.Models.Aceptador_Monedas>
+
+@{
+    ViewBag.Title = "Monederos";
+}
+<h2>Listado de Monederos</h2>
+@if (User.IsInRole("Admin"))
+{
+    <p>
+        @Html.ActionLink("Registrar nuevo Monedero", "Create")
+    </p>
+}
+
+<div id="ListTableId" class="table-responsive">@Html.Grid(Model).Columns(columns =>
+{
+    columns.Add(c => c.NSAceptador_Monedas).Titled(Html.DisplayNameFor(c => c.NSAceptador_Monedas).ToHtmlString()).Filterable(true).Sanitized(false);
+    columns.Add(c => c.NombreAceptador_Monedas).Titled(Html.DisplayNameFor(c => c.NombreAceptador_Monedas).ToHtmlString());
+    columns.Add(c => c.MarcaAceptador_Monedas).Titled(Html.DisplayNameFor(c => c.MarcaAceptador_Monedas).ToHtmlString());
+    columns.Add(c => c.ModeloAceptador_Monedas).Titled(Html.DisplayNameFor(c => c.ModeloAceptador_Monedas).ToHtmlString());
+    columns.Add().Sanitized(false).Encoded(false).RenderValueAs(
+        o =>
+        {
+            var added = "";
+            if (User.IsInRole("Admin"))
+                added = Html.ActionLink("Editar", "Edit", new { id = o.IdAceptador_Monedas }).ToHtmlString();
+            added += " | " + @Html.ActionLink("Info", "Details", new { id = o.IdAceptador_Monedas });
+            return added + (" | " + Html.ActionLink("Eliminar", "Delete", new { id = o.IdAceptador_Monedas }).ToHtmlString());
+        });
+}).WithPaging(10).Sortable(true)</div>
+@section scripts
+{
+    <script>
+        $(document).ready(function() {
+            $("#ListTableId table:first").addClass("table-condensed");
+        });
+    </script>
+}
+
+

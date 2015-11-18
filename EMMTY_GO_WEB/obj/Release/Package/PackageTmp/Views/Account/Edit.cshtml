@@ -1,0 +1,140 @@
+﻿@model EMMTY_GO_WEB.Models.ApplicationUser
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+<div class="row">
+<div class="col-md-6">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h4>ApplicationUser</h4>
+            <hr />
+            @Html.ValidationSummary()
+            @Html.HiddenFor(model => model.Id)
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Name, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.LastName, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Email, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.AlterEmail, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.AlterEmail, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.AlterEmail, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.PhoneNumber, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.AlterPhoneNumber, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.AlterPhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.AlterPhoneNumber, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.UserName, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            @if (!ViewBag.IsAtm)
+            {
+                <div class="form-group">
+                    @Html.Label("IdCliente", "Cliente", new {@class = "control-label col-md-2"})
+                    <div class="col-md-10">
+                        @Html.DropDownList("IdCliente", (IEnumerable<SelectListItem>) ViewBag.clientes)
+                    </div>
+                </div>
+            }
+            <h4>Roles del usuario</h4>
+            <hr/>
+            @foreach (var item in (Dictionary<string, string>) ViewBag.roles)
+            {
+                <div class="form-group">
+                    @((Model.Roles.FirstOrDefault(r => r.RoleId == item.Key) == null)
+                          ? Html.CheckBox(item.Key, new {@class = "control-label col-md-4 col-xs-4"})
+                          : Html.CheckBox(item.Key, new {@class = "control-label col-md-4 col-xs-4", @checked = "checked"}))
+                    <div class="col-md-8">
+                        @item.Value
+                    </div>
+                </div>
+            }
+            <hr/>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save" class="btn btn-default"/>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+<div class="col-md-6">
+    @if (!ViewBag.IsAtm && !ViewBag.IsAdmin)
+    {
+        <h4>Quitar/Asignar Cajeros</h4>
+        <hr/>
+        <div class="col-md-12">
+
+            <div class="thumbnail">
+                <div class="caption">
+
+                    <h4>
+                        @Model.Cajeros.Count de @Model.Cliente.Cajeros.Count Cajero(s) asignado(s) al usuario, corresponientes al cliente @Model.Cliente.NombreCliente
+                    </h4>
+                    <p>@{ ViewBag.Cajeros = Model.Cajeros; }
+                        <a href="@Url.Action("ListCajerosUser", new {id = Model.Id})" class="btn btn-default" role="button">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                            <span class="glyphicon glyphicon-minus" aria-hidden="true"></span> 
+                        </a>
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+    }
+    </div>
+</div>
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,126 @@
+﻿@model EMMTY_GO_WEB.Models.LoginViewModel
+           <script>
+               $("#modal_partianlogin_Form_id").on("submit", function (e) {
+
+                   e.preventDefault();
+                   var form = $("#modal_partianlogin_Form_id");
+                   var token = $("input[name=\"__RequestVerificationToken\"]", form).val();
+                   var username = $("#loginform_UserName_id");
+                   var password = $("#loginform_PassWord_id");
+                   var rememberme = $("#loginform_RememberMe_id");
+                   var loadingAnimationId = $("#loading-animation-id");
+                   var incorrectUsernamePasswordId = $("#incorrect_username_password_id");
+
+                   if (username.val() === "") {
+                       incorrectUsernamePasswordId.text("¡¡¡El campo Username no puede estar vacio!!!");
+                       incorrectUsernamePasswordId.removeClass("hidden");
+                       return false;
+
+                   } else if (password.val() === "") {
+                       incorrectUsernamePasswordId.text("¡¡¡El campo Password no puede estar vacio!!!");
+                       incorrectUsernamePasswordId.removeClass("hidden");
+                       return false;
+                   } 
+                   $.ajax({
+                       url: "@Url.Action("PartialLogin")",
+                       type: "POST",
+                       datatype: "Json",
+                       data: { Email: username.val(), PassWord: password.val(), RememberMe: rememberme.val(), __RequestVerificationToken: token },
+                       beforeSend: function () {
+                           loadingAnimationId.show("slow");
+                       },
+                       success: function (data) {
+                           loadingAnimationId.hide("fast");
+                           if (data["modelState"]) {
+                               incorrectUsernamePasswordId.removeClass("alert-danger");
+                               incorrectUsernamePasswordId.text("¡¡¡Session iniciada Correctamente!!!")
+                               incorrectUsernamePasswordId.addClass("alert-success");
+                               window.location.replace("/Home/Index");
+
+                           } else {
+                               incorrectUsernamePasswordId.text("¡¡¡Username/Password Incorrectos!!! Verifica tus datos.");
+                               incorrectUsernamePasswordId.removeClass("hidden");
+                           }
+                       },
+                       error: function () {
+                           loadingAnimationId.hide("fast");
+                           incorrectUsernamePasswordId.text("¡¡¡Error inesperado!!! Recarga la Pagina porfavor.");
+                           incorrectUsernamePasswordId.removeClass("hidden");
+                       }
+                   });
+               });
+</script>
+    <div class="modal-dialog">
+        <div class="modal-content modal-content-My">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">EMMTY GO</h4>
+            </div>
+            <div class="modal-body" id="modal_body_id">
+                <div class="row">
+                    <div class="col-md-1 col-sm-1 col-xs-1"></div>
+                    <div class="col-md-10 col-sm-10 col-xs-10">
+                        <div class="form-horizontal">
+                            <fieldset>
+                                <legend>Inicio de Session</legend>
+                                <section id="loginForm">
+                                    @using (Html.BeginForm("PartialLogin", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form", id = "modal_partianlogin_Form_id" }))
+                                    {
+                                        @Html.AntiForgeryToken()
+                                        <div class="form-group">
+                                            @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                                            <div class="col-md-10">
+                                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", id = "loginform_UserName_id" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                                            <div class="col-md-10">
+                                                @Html.PasswordFor(m => m.Password, new { @class = "form-control", id = "loginform_PassWord_id" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                                <input type="submit" value="Log In" class="btn btn-primary" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                                <div style="display : none" id="loading-animation-id">
+                                                    <p style="margin-top:-3px;">Iniciando Session...</p>
+                                                    <div id="preloader_1">
+                                                        <span></span>
+                                                        <span></span>
+                                                        <span></span>
+                                                        <span></span>
+                                                        <span></span>
+                                                    </div>
+                                                    <br />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-horizontal">
+                                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                                <p>
+                                                    <div class="big"></div>
+                                                    @Html.ActionLink("Solicita", "Register") tu servicio si no lo tienes.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    }
+                                </section>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1"></div>
+                </div>
+            </div>
+            <div class="modal-footer" id="modal_PartialLogin_footer_id">
+                <div class="alert alert-danger text-left hidden" id="incorrect_username_password_id">
+                    El usurio o contraseña son incorrectos
+                </div>
+            </div>
+        </div>
+    </div>

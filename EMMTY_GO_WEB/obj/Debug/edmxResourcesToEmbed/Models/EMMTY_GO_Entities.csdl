@@ -1,0 +1,508 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EMMTY_GO_Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Aceptador_Billetes">
+    <Key>
+      <PropertyRef Name="IdAceptador_Billetes" />
+    </Key>
+    <Property Name="IdAceptador_Billetes" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ModeloAceptador_Billetes" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NombreAceptador_Billetes" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NSAceptador_Billetes" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="StatusAceptador_Billetes" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ErrorAceptador_Billetes" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MarcaAceptador_Billetes" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Cajeros" Relationship="Self.FK_Cajeros_Aceptadores_Billetes" FromRole="Aceptadores_Billetes" ToRole="Cajeros" />
+  </EntityType>
+  <EntityType Name="Aceptador_Monedas">
+    <Key>
+      <PropertyRef Name="IdAceptador_Monedas" />
+    </Key>
+    <Property Name="IdAceptador_Monedas" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ModeloAceptador_Monedas" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NombreAceptador_Monedas" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NSAceptador_Monedas" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="StatusAceptador_Monedas" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ErrorAceptador_Monedas" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MarcaAceptador_Monedas" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Cajeros" Relationship="Self.FK_Cajeros_Aceptadores_Monedas" FromRole="Aceptadores_Monedas" ToRole="Cajeros" />
+  </EntityType>
+  <EntityType Name="Cajero">
+    <Key>
+      <PropertyRef Name="IdCajero" />
+    </Key>
+    <Property Name="ColorCajero" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FechaEntregaCajero" Type="DateTime" Precision="0" />
+    <Property Name="FechaSalidaCajero" Type="DateTime" Precision="0" />
+    <Property Name="FechaEnsambladoCajero" Type="DateTime" Precision="0" />
+    <Property Name="IdCajero" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NSCajero" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NombreCajero" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NombreEnsamblador" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UbicacionCajero" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ErrorCajero" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IdAceptador_Billetes" Type="Int32" />
+    <Property Name="IdDispensador" Type="Int32" />
+    <Property Name="IdCliente" Type="Int32" />
+    <Property Name="IdPC" Type="Int32" />
+    <Property Name="IdImpresora" Type="Int32" />
+    <Property Name="IdAceptador_Monedas" Type="Int32" />
+    <Property Name="IdTarjeta" Type="Int32" />
+    <Property Name="IdUPS" Type="Int32" />
+    <Property Name="IdScanner" Type="Int32" />
+    <Property Name="IdMonitor" Type="Int32" />
+    <Property Name="IdSucursal" Type="Int32" />
+    <Property Name="StatusCajero" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ModeloCajero" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TipoCajero" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IdToneleroA" Type="Int32" />
+    <Property Name="IdToneleroB" Type="Int32" />
+    <NavigationProperty Name="Aceptador_Billetes" Relationship="Self.FK_Cajeros_Aceptadores_Billetes" FromRole="Cajeros" ToRole="Aceptadores_Billetes" />
+    <NavigationProperty Name="Aceptador_Monedas" Relationship="Self.FK_Cajeros_Aceptadores_Monedas" FromRole="Cajeros" ToRole="Aceptadores_Monedas" />
+    <NavigationProperty Name="Cliente" Relationship="Self.FK_Cajeros_Clientes" FromRole="Cajeros" ToRole="Clientes" />
+    <NavigationProperty Name="Dispensador" Relationship="Self.FK_Cajeros_Dispensadores" FromRole="Cajeros" ToRole="Dispensadores" />
+    <NavigationProperty Name="Impresora" Relationship="Self.FK_Cajeros_Impresoras" FromRole="Cajeros" ToRole="Impresoras" />
+    <NavigationProperty Name="Monitor" Relationship="Self.FK_Cajeros_Monitores" FromRole="Cajeros" ToRole="Monitores" />
+    <NavigationProperty Name="PC" Relationship="Self.FK_Cajeros_PCes" FromRole="Cajeros" ToRole="PCes" />
+    <NavigationProperty Name="Scanner" Relationship="Self.FK_Cajeros_Scanners" FromRole="Cajeros" ToRole="Scanners" />
+    <NavigationProperty Name="Sucursal" Relationship="Self.FK_Cajeros_Sucursales" FromRole="Cajeros" ToRole="Sucursales" />
+    <NavigationProperty Name="Tarjeta" Relationship="Self.FK_Cajeros_Tarjetas" FromRole="Cajeros" ToRole="Tarjetas" />
+    <NavigationProperty Name="ToneleroA" Relationship="Self.FK_Cajeros_TonelerosA" FromRole="Cajeros" ToRole="Toneleros" />
+    <NavigationProperty Name="ToneleroB" Relationship="Self.FK_Cajeros_TonelerosB" FromRole="Cajeros" ToRole="Toneleros" />
+    <NavigationProperty Name="UPS" Relationship="Self.FK_Cajeros_UPSes" FromRole="Cajeros" ToRole="UPSes" />
+    <NavigationProperty Name="ReportesXCajero" Relationship="Self.FK_ReportesXCajero_Cajeros" FromRole="Cajeros" ToRole="ReportesXCajero" />
+    <Property Name="EfectivoActual" Type="Int32" />
+    <Property Name="EfectivoDispensado" Type="Int32" />
+    <Property Name="EfectivoInicial" Type="Int32" />
+    <Property Name="NivelBajoEfectivo" Type="Int32" />
+    <Property Name="LastRowUpdate" Type="DateTime" Precision="7" />
+  </EntityType>
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="IdCliente" />
+    </Key>
+    <Property Name="IdCliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LicenciaStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NombreCliente" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TipoCliente" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Cajeros" Relationship="Self.FK_Cajeros_Clientes" FromRole="Clientes" ToRole="Cajeros" />
+  </EntityType>
+  <EntityType Name="Dispensador">
+    <Key>
+      <PropertyRef Name="IdDispensador" />
+    </Key>
+    <Property Name="IdDispensador" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EfectivoActualDispensador" Type="Int32" />
+    <Property Name="EfectivoDispensadoDispensador" Type="Int32" />
+    <Property Name="EfectivoInicialDispensador" Type="Int32" />
+    <Property Name="ModeloDispensador" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NSDispensador" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="StatusDispensador" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TipoBillete" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ErrorDispensador" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MarcaDispensador" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NombreDispensador" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Cajeros" Relationship="Self.FK_Cajeros_Dispensadores" FromRole="Dispensadores" ToRole="Cajeros" />
+  </EntityType>
+  <EntityType Name="Impresora">
+    <Key>
+      <PropertyRef Name="IdImpresora" />
+    </Key>
+    <Property Name="IdImpresora" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NSImpresora" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NombreImpresora" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ModeloImpresora" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="StatusImpresora" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PapelImpresora" Type="Boolean" />
+    <Property Name="ErrorImpresora" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MarcaImpresora" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Cajeros" Relationship="Self.FK_Cajeros_Impresoras" FromRole="Impresoras" ToRole="Cajeros" />
+  </EntityType>
+  <EntityType Name="Monitor">
+    <Key>
+      <PropertyRef Name="IdMonitor" />
+    </Key>
+    <Property Name="IdMonitor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MarcaMonitor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ModeloMonitor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NombreMonitor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NSMonitor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="StatusMonitor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ErrorMonitor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Cajeros" Relationship="Self.FK_Cajeros_Monitores" FromRole="Monitores" ToRole="Cajeros" />
+  </EntityType>
+  <EntityType Name="PC">
+    <Key>
+      <PropertyRef Name="IdPC" />
+    </Key>
+    <Property Name="IdPC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MarcaPC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ModeloPC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NombrePC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NSPC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OSPC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="StatusPC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ErrorPC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Cajeros" Relationship="Self.FK_Cajeros_PCes" FromRole="PCes" ToRole="Cajeros" />
+  </EntityType>
+  <EntityType Name="Reporte">
+    <Key>
+      <PropertyRef Name="IdReporte" />
+    </Key>
+    <Property Name="IdReporte" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FechaReporte" Type="DateTime" Precision="0" />
+    <Property Name="CorrectivoReporte" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PreventivoReporte" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TecnicoReporte" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NombreReporte" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NSReporte" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ReportesXCajero" Relationship="Self.FK_ReportesXCajero_Reportes" FromRole="Reportes" ToRole="ReportesXCajero" />
+  </EntityType>
+  <EntityType Name="ReportesXCajero">
+    <Key>
+      <PropertyRef Name="IdReporteXCajero" />
+    </Key>
+    <Property Name="IdReporte" Type="Int32" />
+    <Property Name="IdCajero" Type="Int32" />
+    <Property Name="IdReporteXCajero" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Cajeros" Relationship="Self.FK_ReportesXCajero_Cajeros" FromRole="ReportesXCajero" ToRole="Cajeros" />
+    <NavigationProperty Name="Reportes" Relationship="Self.FK_ReportesXCajero_Reportes" FromRole="ReportesXCajero" ToRole="Reportes" />
+  </EntityType>
+  <EntityType Name="Scanner">
+    <Key>
+      <PropertyRef Name="IdScanner" />
+    </Key>
+    <Property Name="IdScanner" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MarcaScanner" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MoneloScanner" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NombreScanner" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NSScanner" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="StatusScanner" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ErrorScanner" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Cajeros" Relationship="Self.FK_Cajeros_Scanners" FromRole="Scanners" ToRole="Cajeros" />
+  </EntityType>
+  <EntityType Name="Sucursal">
+    <Key>
+      <PropertyRef Name="IdSucursal" />
+    </Key>
+    <Property Name="IdSucursal" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SupervisorCajero" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EmpresaSucursal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TelefonoSucursal" Type="Int32" />
+    <Property Name="GerenteSucursal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DireccionSucursal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NombreSucursal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Cajeros" Relationship="Self.FK_Cajeros_Sucursales" FromRole="Sucursales" ToRole="Cajeros" />
+  </EntityType>
+  <EntityType Name="Tarjeta">
+    <Key>
+      <PropertyRef Name="IdTarjeta" />
+    </Key>
+    <Property Name="IdTarjeta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ModeloTarjeta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NSTarjeta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="StatusTarjeta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ErrorTarjeta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MarcaTarjeta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NombreTarjeta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Cajeros" Relationship="Self.FK_Cajeros_Tarjetas" FromRole="Tarjetas" ToRole="Cajeros" />
+  </EntityType>
+  <EntityType Name="Tonelero">
+    <Key>
+      <PropertyRef Name="IdTonelero" />
+    </Key>
+    <Property Name="IdTonelero" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NombreTonelero" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ModeloTonelero" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NSTonelero" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="StatusTonelero" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TipoMoneda" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EfectivoActualTonelero" Type="Int32" />
+    <Property Name="EfectivoDispensadoTonelero" Type="Int32" />
+    <Property Name="EfectivoInicialTonelero" Type="Int32" />
+    <Property Name="ErrorTonelero" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MarcaTonelero" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Cajeros" Relationship="Self.FK_Cajeros_TonelerosA" FromRole="Toneleros" ToRole="Cajeros" />
+    <NavigationProperty Name="Cajeros1" Relationship="Self.FK_Cajeros_TonelerosB" FromRole="Toneleros" ToRole="Cajeros" />
+  </EntityType>
+  <EntityType Name="UPS">
+    <Key>
+      <PropertyRef Name="IdUPS" />
+    </Key>
+    <Property Name="IdUPS" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MarcaUPS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ModeloUPS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NombreUPS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NSUPS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="StatusUPS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ErrorUPS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Cajeros" Relationship="Self.FK_Cajeros_UPSes" FromRole="UPSes" ToRole="Cajeros" />
+  </EntityType>
+  <Association Name="FK_Cajeros_Aceptadores_Billetes">
+    <End Role="Aceptadores_Billetes" Type="EMMTY_GO_Model.Aceptador_Billetes" Multiplicity="0..1" />
+    <End Role="Cajeros" Type="EMMTY_GO_Model.Cajero" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Aceptadores_Billetes">
+        <PropertyRef Name="IdAceptador_Billetes" />
+      </Principal>
+      <Dependent Role="Cajeros">
+        <PropertyRef Name="IdAceptador_Billetes" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cajeros_Aceptadores_Monedas">
+    <End Role="Aceptadores_Monedas" Type="EMMTY_GO_Model.Aceptador_Monedas" Multiplicity="0..1" />
+    <End Role="Cajeros" Type="EMMTY_GO_Model.Cajero" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Aceptadores_Monedas">
+        <PropertyRef Name="IdAceptador_Monedas" />
+      </Principal>
+      <Dependent Role="Cajeros">
+        <PropertyRef Name="IdAceptador_Monedas" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cajeros_Clientes">
+    <End Role="Clientes" Type="EMMTY_GO_Model.Cliente" Multiplicity="0..1" />
+    <End Role="Cajeros" Type="EMMTY_GO_Model.Cajero" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clientes">
+        <PropertyRef Name="IdCliente" />
+      </Principal>
+      <Dependent Role="Cajeros">
+        <PropertyRef Name="IdCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cajeros_Dispensadores">
+    <End Role="Dispensadores" Type="EMMTY_GO_Model.Dispensador" Multiplicity="0..1" />
+    <End Role="Cajeros" Type="EMMTY_GO_Model.Cajero" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dispensadores">
+        <PropertyRef Name="IdDispensador" />
+      </Principal>
+      <Dependent Role="Cajeros">
+        <PropertyRef Name="IdDispensador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cajeros_Impresoras">
+    <End Role="Impresoras" Type="EMMTY_GO_Model.Impresora" Multiplicity="0..1" />
+    <End Role="Cajeros" Type="EMMTY_GO_Model.Cajero" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Impresoras">
+        <PropertyRef Name="IdImpresora" />
+      </Principal>
+      <Dependent Role="Cajeros">
+        <PropertyRef Name="IdImpresora" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cajeros_Monitores">
+    <End Role="Monitores" Type="EMMTY_GO_Model.Monitor" Multiplicity="0..1" />
+    <End Role="Cajeros" Type="EMMTY_GO_Model.Cajero" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Monitores">
+        <PropertyRef Name="IdMonitor" />
+      </Principal>
+      <Dependent Role="Cajeros">
+        <PropertyRef Name="IdMonitor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cajeros_PCes">
+    <End Role="PCes" Type="EMMTY_GO_Model.PC" Multiplicity="0..1" />
+    <End Role="Cajeros" Type="EMMTY_GO_Model.Cajero" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PCes">
+        <PropertyRef Name="IdPC" />
+      </Principal>
+      <Dependent Role="Cajeros">
+        <PropertyRef Name="IdPC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cajeros_Scanners">
+    <End Role="Scanners" Type="EMMTY_GO_Model.Scanner" Multiplicity="0..1" />
+    <End Role="Cajeros" Type="EMMTY_GO_Model.Cajero" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Scanners">
+        <PropertyRef Name="IdScanner" />
+      </Principal>
+      <Dependent Role="Cajeros">
+        <PropertyRef Name="IdScanner" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cajeros_Sucursales">
+    <End Role="Sucursales" Type="EMMTY_GO_Model.Sucursal" Multiplicity="0..1" />
+    <End Role="Cajeros" Type="EMMTY_GO_Model.Cajero" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sucursales">
+        <PropertyRef Name="IdSucursal" />
+      </Principal>
+      <Dependent Role="Cajeros">
+        <PropertyRef Name="IdSucursal" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cajeros_Tarjetas">
+    <End Role="Tarjetas" Type="EMMTY_GO_Model.Tarjeta" Multiplicity="0..1" />
+    <End Role="Cajeros" Type="EMMTY_GO_Model.Cajero" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tarjetas">
+        <PropertyRef Name="IdTarjeta" />
+      </Principal>
+      <Dependent Role="Cajeros">
+        <PropertyRef Name="IdTarjeta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cajeros_TonelerosA">
+    <End Role="Toneleros" Type="EMMTY_GO_Model.Tonelero" Multiplicity="0..1" />
+    <End Role="Cajeros" Type="EMMTY_GO_Model.Cajero" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Toneleros">
+        <PropertyRef Name="IdTonelero" />
+      </Principal>
+      <Dependent Role="Cajeros">
+        <PropertyRef Name="IdToneleroA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cajeros_TonelerosB">
+    <End Role="Toneleros" Type="EMMTY_GO_Model.Tonelero" Multiplicity="0..1" />
+    <End Role="Cajeros" Type="EMMTY_GO_Model.Cajero" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Toneleros">
+        <PropertyRef Name="IdTonelero" />
+      </Principal>
+      <Dependent Role="Cajeros">
+        <PropertyRef Name="IdToneleroB" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cajeros_UPSes">
+    <End Role="UPSes" Type="EMMTY_GO_Model.UPS" Multiplicity="0..1" />
+    <End Role="Cajeros" Type="EMMTY_GO_Model.Cajero" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UPSes">
+        <PropertyRef Name="IdUPS" />
+      </Principal>
+      <Dependent Role="Cajeros">
+        <PropertyRef Name="IdUPS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ReportesXCajero_Cajeros">
+    <End Role="Cajeros" Type="EMMTY_GO_Model.Cajero" Multiplicity="0..1" />
+    <End Role="ReportesXCajero" Type="Self.ReportesXCajero" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cajeros">
+        <PropertyRef Name="IdCajero" />
+      </Principal>
+      <Dependent Role="ReportesXCajero">
+        <PropertyRef Name="IdCajero" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ReportesXCajero_Reportes">
+    <End Role="Reportes" Type="EMMTY_GO_Model.Reporte" Multiplicity="0..1" />
+    <End Role="ReportesXCajero" Type="Self.ReportesXCajero" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Reportes">
+        <PropertyRef Name="IdReporte" />
+      </Principal>
+      <Dependent Role="ReportesXCajero">
+        <PropertyRef Name="IdReporte" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="EMMTY_GO_Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Aceptadores_Billetes" EntityType="EMMTY_GO_Model.Aceptador_Billetes" />
+    <EntitySet Name="Aceptadores_Monedas" EntityType="EMMTY_GO_Model.Aceptador_Monedas" />
+    <EntitySet Name="Cajeros" EntityType="EMMTY_GO_Model.Cajero" />
+    <EntitySet Name="Clientes" EntityType="EMMTY_GO_Model.Cliente" />
+    <EntitySet Name="Dispensadores" EntityType="EMMTY_GO_Model.Dispensador" />
+    <EntitySet Name="Impresoras" EntityType="EMMTY_GO_Model.Impresora" />
+    <EntitySet Name="Monitores" EntityType="EMMTY_GO_Model.Monitor" />
+    <EntitySet Name="PCes" EntityType="EMMTY_GO_Model.PC" />
+    <EntitySet Name="Reportes" EntityType="EMMTY_GO_Model.Reporte" />
+    <EntitySet Name="ReportesXCajero" EntityType="Self.ReportesXCajero" />
+    <EntitySet Name="Scanners" EntityType="EMMTY_GO_Model.Scanner" />
+    <EntitySet Name="Sucursales" EntityType="EMMTY_GO_Model.Sucursal" />
+    <EntitySet Name="Tarjetas" EntityType="EMMTY_GO_Model.Tarjeta" />
+    <EntitySet Name="Toneleros" EntityType="EMMTY_GO_Model.Tonelero" />
+    <EntitySet Name="UPSes" EntityType="EMMTY_GO_Model.UPS" />
+    <AssociationSet Name="FK_Cajeros_Aceptadores_Billetes" Association="Self.FK_Cajeros_Aceptadores_Billetes">
+      <End Role="Aceptadores_Billetes" EntitySet="Aceptadores_Billetes" />
+      <End Role="Cajeros" EntitySet="Cajeros" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cajeros_Aceptadores_Monedas" Association="Self.FK_Cajeros_Aceptadores_Monedas">
+      <End Role="Aceptadores_Monedas" EntitySet="Aceptadores_Monedas" />
+      <End Role="Cajeros" EntitySet="Cajeros" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cajeros_Clientes" Association="Self.FK_Cajeros_Clientes">
+      <End Role="Clientes" EntitySet="Clientes" />
+      <End Role="Cajeros" EntitySet="Cajeros" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cajeros_Dispensadores" Association="Self.FK_Cajeros_Dispensadores">
+      <End Role="Dispensadores" EntitySet="Dispensadores" />
+      <End Role="Cajeros" EntitySet="Cajeros" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cajeros_Impresoras" Association="Self.FK_Cajeros_Impresoras">
+      <End Role="Impresoras" EntitySet="Impresoras" />
+      <End Role="Cajeros" EntitySet="Cajeros" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cajeros_Monitores" Association="Self.FK_Cajeros_Monitores">
+      <End Role="Monitores" EntitySet="Monitores" />
+      <End Role="Cajeros" EntitySet="Cajeros" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cajeros_PCes" Association="Self.FK_Cajeros_PCes">
+      <End Role="PCes" EntitySet="PCes" />
+      <End Role="Cajeros" EntitySet="Cajeros" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cajeros_Scanners" Association="Self.FK_Cajeros_Scanners">
+      <End Role="Scanners" EntitySet="Scanners" />
+      <End Role="Cajeros" EntitySet="Cajeros" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cajeros_Sucursales" Association="Self.FK_Cajeros_Sucursales">
+      <End Role="Sucursales" EntitySet="Sucursales" />
+      <End Role="Cajeros" EntitySet="Cajeros" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cajeros_Tarjetas" Association="Self.FK_Cajeros_Tarjetas">
+      <End Role="Tarjetas" EntitySet="Tarjetas" />
+      <End Role="Cajeros" EntitySet="Cajeros" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cajeros_TonelerosA" Association="Self.FK_Cajeros_TonelerosA">
+      <End Role="Toneleros" EntitySet="Toneleros" />
+      <End Role="Cajeros" EntitySet="Cajeros" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cajeros_TonelerosB" Association="Self.FK_Cajeros_TonelerosB">
+      <End Role="Toneleros" EntitySet="Toneleros" />
+      <End Role="Cajeros" EntitySet="Cajeros" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cajeros_UPSes" Association="Self.FK_Cajeros_UPSes">
+      <End Role="UPSes" EntitySet="UPSes" />
+      <End Role="Cajeros" EntitySet="Cajeros" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ReportesXCajero_Cajeros" Association="Self.FK_ReportesXCajero_Cajeros">
+      <End Role="Cajeros" EntitySet="Cajeros" />
+      <End Role="ReportesXCajero" EntitySet="ReportesXCajero" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ReportesXCajero_Reportes" Association="Self.FK_ReportesXCajero_Reportes">
+      <End Role="Reportes" EntitySet="Reportes" />
+      <End Role="ReportesXCajero" EntitySet="ReportesXCajero" />
+    </AssociationSet>
+    <EntitySet Name="AspNetUserLogins" EntityType="EMMTY_GO_Model.AspNetUserLogins" />
+  </EntityContainer>
+  <EntityType Name="AspNetUserLogins">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="ProviderKey" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

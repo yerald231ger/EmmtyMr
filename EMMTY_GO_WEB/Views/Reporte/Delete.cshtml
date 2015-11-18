@@ -1,0 +1,72 @@
+﻿@model EMMTY_GO_WEB.Models.Reporte
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Reporte</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaReporte)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaReporte)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CorrectivoReporte)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CorrectivoReporte)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PreventivoReporte)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PreventivoReporte)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TecnicoReporte)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TecnicoReporte)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreReporte)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreReporte)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NSReporte)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NSReporte)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,113 @@
+﻿<script>
+  
+</script>
+@model EMMTY_GO_WEB.Models.LoginViewModel
+
+@{
+    ViewBag.Title = "Home Page";
+}
+<div class="jumbotron">
+    <h1>EMMTY MR</h1>
+    <p class="lead">Monitorizacion remota de Cajeros.</p>
+</div>
+
+@if (User.Identity.IsAuthenticated) {
+@section Scripts {
+    <script>
+        $(document).ready(function() {
+            var panelcashlevelstable = $("#panel-cashlevels-table");
+            var notifyCashLevels = $("#notifyCashLevels");
+
+            var panelnotifyErrorstable = $("#panel-notifyErrors-table");
+            var notifyErrors = $("#notifyErrors");
+
+            function cashLevels() {
+                $.getJSON('@Url.Action("CashLevelsLow")', {}, function(data) {
+                    notifyCashLevels.children(".badge").text(data["NCajeros"]);
+                    $.each(data["Cajeros"], function(key, val) {
+                        var tbody = panelcashlevelstable.children("tbody").append("<tr></tr>");
+                        tbody.children("tr").last().append("<th><a href=/Cajero/Details/" + val["IdCajero"] + ">" + val["NSCajero"] + "</a></th>");
+                        tbody.children("tr").last().append("<th>" + val["EfectivoActual"] + "</th>");
+                    });
+                });
+            }
+
+            cashLevels();
+
+            function atMsErrors() {
+                $.getJSON('@Url.Action("ComponenetsError")', {}, function(data) {
+                    notifyErrors.children(".badge").text(data["NCajeros"]);
+                    $.each(data["Cajeros"], function(key, val) {
+                        var tbody = panelnotifyErrorstable.children("tbody").append("<tr></tr>");
+                        tbody.children("tr").last().append("<th><a href=/Cajero/Details/" + val["IdCajero"] + ">" + val["NSCajero"] + "</a></th>");
+                        tbody.children("tr").last().append("<th>" + val["StatusCajero"] + "</th>");
+                    });
+                });
+            }
+
+            atMsErrors();
+
+            notifyCashLevels.click(function() {
+                panelcashlevelstable.children("tbody").replaceWith("<tbody></tbody>");
+                cashLevels();
+            });
+
+            notifyErrors.click(function() {
+                panelnotifyErrorstable.children("tbody").replaceWith("<tbody></tbody>");
+                atMsErrors();
+            });
+
+        });
+    </script>
+
+}
+<div class="row">
+    <div class="col-md-12">
+        <h2>Notificaciones</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <ul class="nav nav-pills" role="tablist">
+                    <li role="presentation"><a href="#" id="notifyCashLevels">Cajeros con Niveles de efectivo bajo<span class="badge">0</span></a></li>
+                </ul>
+                <div class="panel panel-default" style="overflow-y: scroll; height: 300px;">
+                    <table id="panel-cashlevels-table" class="table">
+                        <thead>
+                            <tr>
+                                <th>Cajero</th>
+                                <th>Nivel de Efectivo</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <ul class="nav nav-pills" role="tablist">
+                    <li role="presentation"><a href="#" id="notifyErrors">Cajeros con fallas o errores <span class="badge">0</span></a></li>
+                </ul>
+                <div class="panel panel-default" style="overflow-y: scroll; height: 300px;">
+                    <table id="panel-notifyErrors-table" class="table">
+                        <thead>
+                            <tr>
+                                <th>Cajero</th>
+                                <th>Error</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-4">
+            </div>
+        </div>
+    </div>
+</div>
+}
+else 
+{
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Inicia Session para ver las notificaciones mas resientes</h3>
+        </div>
+    </div>
+}
